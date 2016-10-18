@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall for the default docker installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function eduhist_install() {
+  include_once DRUPAL_ROOT . '/core/profiles/minimal/minimal.install';
+  minimal_install();
+
+  // Can add code in here to make nodes, terms, etc.
+}

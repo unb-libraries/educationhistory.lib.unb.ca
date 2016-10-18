@@ -1,0 +1,50 @@
+{
+  "name": "educationhistory.lib.unb.ca_local",
+  "version": "1.0.0",
+  "main": "Gruntfile.js",
+  "author": "libsystems@unb.ca",
+  "private": true,
+  "license": "MIT",
+  "config": {
+    "siteuri": "educationhistory.lib.unb.ca",
+    "upstream_image": "unblibraries/drupal:alpine-nginx-php7-8.x-composer",
+    "devhost": "devserver.docker.remote"
+  },
+  "commitMsg": {
+    "noServerHook": true
+  },
+  "scripts": {
+    "behat-tests": "./node_modules/.bin/grunt behat-tests",
+    "clean": "./node_modules/.bin/grunt clean:all",
+    "container-shell": "docker exec -i -t $npm_package_config_siteuri sh",
+    "destroy": "npm run instance-destroy",
+    "disable-dev-mode": "./node_modules/.bin/grunt disable-dev-mode",
+    "enable-dev-mode": "./node_modules/.bin/grunt enable-dev-mode",
+    "instance-destroy": "./node_modules/.bin/grunt instance-destroy",
+    "instance-start-over": "./node_modules/.bin/grunt instance-start-over",
+    "instance-start": "./node_modules/.bin/grunt instance-start",
+    "instance-stop": "./node_modules/.bin/grunt instance-stop",
+    "logs": "./node_modules/.bin/grunt tail-logs",
+    "remote-dev-sync": "./node_modules/.bin/grunt remote-dev-sync",
+    "repo-start-over": "./node_modules/.bin/grunt repo-start-over",
+    "setup": "./node_modules/.bin/grunt setup",
+    "start-over": "npm run instance-start-over",
+    "start": "npm run instance-start",
+    "stop": "npm run instance-stop",
+    "test-changes": "npm run instance-start-over",
+    "uli": "./node_modules/.bin/grunt uli",
+    "validate-php": "./node_modules/.bin/grunt validate-php || true",
+    "write-config": "./node_modules/.bin/grunt write-config"
+  },
+  "devDependencies": {
+    "commit-msg": "^0.2.1",
+    "getcomposer": "^1.3.2",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-composer": "^0.4.5",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-phpcs": "^0.4.0",
+    "grunt-shell": "^1.3.0",
+    "grunt-subgrunt": "^1.2.0"
+  }
+}

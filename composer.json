@@ -1,0 +1,9 @@
+{
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "name": "Provision scaffolding for deploying instance. Unrelated to Drupal site.", 
+    "require-dev": {
+        "squizlabs/php_codesniffer": "2.5.1",
+        "drupal/coder": "^8.2.7"
+    }
+}
