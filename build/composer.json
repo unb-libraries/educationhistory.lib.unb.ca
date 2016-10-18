@@ -52,9 +52,9 @@
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.1.10",
+        "drupal/core": "8.2.0",
+        "drupal/inline_entity_form": "1.0-alpha6",
         "drupal/features": "3.0-beta8",
-        "drupal/field_collection": "1.0-alpha1",
         "drush/drush": "~8.0"
     },
     "require-dev": {

@@ -1,0 +1,255 @@
+/* content */
+div.region.region-content {
+  padding-left:   60px;
+  padding-right:  60px;
+}
+
+
+#kath3 {
+	float: right;
+	font-family: Garamond, "Book Antiqua", "Palatino Linotype", Palatino, serif;
+  	font-size: 1.1em;
+        margin-left: 20px;
+	margin-right: 10px
+}
+
+#block-book-navigation {
+  position: fixed;
+  width: 150px;
+}
+
+main#content {
+	background: white !important;
+}
+
+#content > section.section {
+	background: white;
+}
+
+a.site-branding__logo {
+	padding-top: 20px;
+}
+
+footer.site-footer {
+	padding: 0;
+}
+
+#sidebar-second {
+	float: right;
+	padding-top: 95px;
+}
+
+.title {
+	font-family: Garamond;
+	padding-left: 15px;
+	padding-top: 6px;
+	background: #ffffff;
+}
+
+#kath {
+	float: right;
+}
+
+#site-name {
+	margin-left: -250px;
+	text-decoration: underline;
+
+}
+
+.region {
+	/*width: 800px;
+	margin-left: 60px;*/
+}
+
+/* Changes for a reduced width page */
+/************************************/
+#page-wrapper .section {
+	background: #eaeff1;
+	padding: 0px;
+
+}
+
+/* Bottom links */
+
+.link-wrapper {
+	width: 650px;
+}
+
+/* was width:750px; padding-left: 40px; */
+.content {
+}
+
+/************************************/
+
+div#page div#header {
+	background-color: #cddfe8;
+	background-image: none;
+}
+
+#name-and-slogan a{
+	color: #046495;
+}
+
+.img_right {
+	float: right;
+
+}
+
+.region-content {
+  background-color: #ffffff;
+}
+
+#page #main-wrapper {
+	background: #cddfe8;
+	background-color: #cddfe8;
+}
+
+#page {
+	background: #cddfe8;
+}
+
+#main-wrapper {
+	margin-top: -30px;
+}
+
+/* ****************************************************************************
+ * Book navigation menu
+ * ************************************************************************* */
+
+.book-navigation .menu {
+  /*border-top: 1px solid #565656;*/
+}
+.book-navigation .page-links {
+/*  clear: both; */
+  /*border-top: 1px solid #565656;
+  border-bottom: 1px solid #565656;*/
+}
+
+/* ****************************
+* Title
+****************************** */
+#bookpage,
+#titlepage {
+  font-family: Garamond, "Book Antiqua", "Palatino Linotype", Palatino, serif;
+  font-size: 1.3em;
+  width: 31.25em;
+  margin: 0 auto 1em auto;
+}
+
+#titlepage {
+  border: 4px double;
+}
+
+#main-title,
+#sub-title,
+#byline,
+#byline .name,
+#author,
+#edition,
+#imprint,
+#date {
+  text-align: center;
+  margin: 1em 2em;
+  line-height: 1.3em;
+}
+
+#author,
+#edition,
+#imprint {
+  text-transform: uppercase;
+}
+
+#author {
+  font-size: 1.25em;
+}
+
+#byline .name {
+  font-weight: bold;
+}
+
+/* ****************************************************************************
+ * Book Pages
+ * ************************************************************************* */
+
+.pagenum {
+  text-align: center;
+  border-top: 1px solid #333;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+.bookpara {
+/* Removed because it also indented the signatures following the Foreword and
+   Introduction and that didn't look good.
+  text-indent: 3em; */
+  margin-bottom: 1em;
+}
+
+/* ****************************************************************************
+ * Headers
+ * ************************************************************************* */
+
+#bookpage h1,
+#bookpage h2 {
+  text-align: center;
+  font-weight: normal;
+  line-height: 1.3em;
+}
+
+#main-title,
+#bookpage h1 {
+  font-size: 1.5em;
+}
+
+#sub-title,
+#bookpage h2 {
+  font-size: 1.25em;
+}
+
+/* ****************************************************************************
+ * Lists
+ * ************************************************************************* */
+
+ul {
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+
+ul.biblio {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul.biblio li {
+  margin: 1em 0;
+}
+
+/* ****************************************************************************
+ * Links
+ * ************************************************************************* */
+
+a.note-ref { /* superscript */
+  font-size: small;
+  vertical-align: super;
+  line-height: 0;
+}
+
+h1#page-title {
+  margin-bottom: 0px;
+}
+
+div.tabs {
+  margin-bottom: 0px;
+}
+
+#main #content div.section {
+  background-color: #FFF;
+}
+
+div#breadcrumb {
+  display: none;
+}
+
+div.region-content {
+  margin : 20px;
+}
