@@ -23,13 +23,6 @@ Feature: Core
       When I visit "admin/people"
       Then I should see the link "Joe User"
 
-    Scenario: Login as a user created during this scenario
-      Given users:
-      | name      | status |
-      | Test user |      1 |
-      When I am logged in as "Test user"
-      Then I should see the link "Log out"
-
     Scenario: Create a term
       Given I am logged in as a user with the "administrator" role
       When I am viewing a "tags" term with the name "My tag"
