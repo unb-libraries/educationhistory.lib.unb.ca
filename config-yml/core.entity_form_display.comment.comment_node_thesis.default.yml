@@ -1,0 +1,31 @@
+uuid: aeeb8bc2-c016-41ef-b0b6-b2aa48929bdf
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesis
+    - field.field.comment.comment_node_thesis.comment_body
+  module:
+    - text
+id: comment.comment_node_thesis.default
+targetEntityType: comment
+bundle: comment_node_thesis
+mode: default
+content:
+  author:
+    weight: -2
+  comment_body:
+    type: text_textarea
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  subject:
+    type: string_textfield
+    weight: 10
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

@@ -11,15 +11,15 @@ _core:
 id: bartik_branding
 theme: bartik
 region: header
-weight: 0
+weight: -9
 provider: null
 plugin: system_branding_block
 settings:
   id: system_branding_block
-  label: 'Site branding'
+  label: 'History of Education in New Brunswick'
   provider: system
-  label_display: '0'
+  label_display: visible
   use_site_logo: true
-  use_site_name: true
+  use_site_name: false
   use_site_slogan: true
 visibility: {  }

@@ -1,0 +1,26 @@
+uuid: 680ab3f6-3b44-4131-8cdb-0707019d56b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.biography.body
+    - node.type.biography
+  module:
+    - text
+    - user
+id: node.biography.teaser
+targetEntityType: node
+bundle: biography
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

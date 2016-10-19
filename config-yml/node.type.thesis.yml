@@ -1,0 +1,11 @@
+uuid: 74e25d66-8304-444f-b076-5743b22ae041
+langcode: en
+status: true
+dependencies: {  }
+name: Thesis
+type: thesis
+description: 'This content type is used to enter information about a thesis, including links to different online versions of the text.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -8,7 +8,7 @@ dependencies:
     - seven
 _core:
   default_config_hash: IItlF4SKHgxduIysVQdvirDJ_v3HGuAviOkidAOJYRE
-id: seven_login
+id: seven_user_login
 theme: seven
 region: content
 weight: 10
@@ -16,7 +16,7 @@ provider: null
 plugin: user_login_block
 settings:
   id: user_login_block
-  label: 'User login'
+  label: ''
   provider: user
-  label_display: visible
+  label_display: '0'
 visibility: {  }

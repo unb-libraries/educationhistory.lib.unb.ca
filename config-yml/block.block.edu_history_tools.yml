@@ -1,0 +1,26 @@
+uuid: 7d0378d0-3726-4a48-9ef7-5b30c52e5b57
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - edu_history
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: edu_history_tools
+theme: edu_history
+region: primary_menu
+weight: -7
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

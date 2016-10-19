@@ -1,0 +1,8 @@
+uuid: 727089f5-216b-4d43-a9bc-8508607c2d1b
+langcode: en
+status: true
+dependencies: {  }
+id: comment_node_thesis
+label: 'Thesis comment'
+target_entity_type_id: node
+description: null

@@ -1,0 +1,25 @@
+uuid: 0c11ae00-67e0-43ca-b038-00bc6e00bdd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edu_history
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: edu_history_branding
+theme: edu_history
+region: header
+weight: -9
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'History of Education in New Brunswick'
+  provider: system
+  label_display: visible
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: true
+visibility: {  }

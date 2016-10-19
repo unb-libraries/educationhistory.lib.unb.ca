@@ -1,22 +1,22 @@
-uuid: 1923f58a-ca55-403a-a313-c249d9f2a8ef
+uuid: 6d41813d-693c-4065-a546-a20bbb95de36
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - edu_history
 _core:
   default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
-id: bartik_content
-theme: bartik
+id: edu_history_educationhistory_lib_unb_ca_system_main
+theme: edu_history
 region: content
 weight: 0
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Main page content'
+  label: ''
   provider: system
   label_display: '0'
 visibility: {  }

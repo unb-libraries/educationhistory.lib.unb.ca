@@ -48,8 +48,12 @@ display:
       style:
         type: table
         options:
-          grouping: {  }
-          row_class: ''
+          grouping:
+            -
+              field: node_bulk_form
+              rendered: true
+              rendered_strip: false
+          row_class: views-row-1
           default_row_class: true
           override: true
           sticky: true
@@ -63,10 +67,7 @@ display:
             name: name
             status: status
             changed: changed
-            edit_node: edit_node
-            delete_node: delete_node
-            dropbutton: dropbutton
-            timestamp: title
+            operations: operations
           info:
             node_bulk_form:
               align: ''
@@ -108,28 +109,7 @@ display:
               separator: ''
               empty_column: false
               responsive: priority-low
-            edit_node:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            delete_node:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            dropbutton:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
-            timestamp:
+            operations:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -373,7 +353,7 @@ display:
           group_type: group
           admin_label: ''
           operator: '='
-          value: true
+          value: '1'
           group: 1
           exposed: true
           expose:

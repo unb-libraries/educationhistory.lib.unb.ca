@@ -1,0 +1,24 @@
+uuid: 20dcfeba-37b4-42fe-b249-fe4764912ee4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin-login
+  module:
+    - system
+  theme:
+    - bartik
+id: adminlogin
+theme: bartik
+region: footer_first
+weight: -10
+provider: null
+plugin: 'system_menu_block:admin-login'
+settings:
+  id: 'system_menu_block:admin-login'
+  label: 'Admin Login'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

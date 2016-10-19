@@ -1,0 +1,21 @@
+uuid: cc9c1317-ff6c-4962-b431-0d5920dd4789
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publication_information
+    - node.type.thesis
+  module:
+    - text
+id: node.thesis.field_publication_information
+field_name: field_publication_information
+entity_type: node
+bundle: thesis
+label: 'Publication Information'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.comment_node_book
     - node.type.book
   module:
     - path
@@ -22,6 +23,11 @@ content:
       rows: 9
       summary_rows: 3
       placeholder: ''
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 20
+    settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
@@ -60,4 +66,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  comment_node_book: true

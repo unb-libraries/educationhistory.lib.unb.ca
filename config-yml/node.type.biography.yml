@@ -1,0 +1,11 @@
+uuid: 3691722f-fc0f-43cd-aebb-e5fd2e7aec41
+langcode: en
+status: true
+dependencies: {  }
+name: Biography
+type: biography
+description: 'A biography of the thesis author, optionally including photo.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

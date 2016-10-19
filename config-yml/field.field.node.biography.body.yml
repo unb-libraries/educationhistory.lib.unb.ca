@@ -1,0 +1,22 @@
+uuid: ff2b699d-0cf9-43df-b7d8-4910d24b5330
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.biography
+  module:
+    - text
+id: node.biography.body
+field_name: body
+entity_type: node
+bundle: biography
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

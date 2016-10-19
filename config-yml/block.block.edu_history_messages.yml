@@ -1,0 +1,22 @@
+uuid: a47db353-6b28-4896-a261-e15ec4cdc603
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - edu_history
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: edu_history_messages
+theme: edu_history
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

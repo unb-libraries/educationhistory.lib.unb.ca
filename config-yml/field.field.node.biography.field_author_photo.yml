@@ -1,0 +1,27 @@
+uuid: 587cae27-2e48-4fe2-bbeb-0cc1d4024e72
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_author_photo
+    - node.type.biography
+  module:
+    - file
+id: node.biography.field_author_photo
+field_name: field_author_photo
+entity_type: node
+bundle: biography
+label: 'Author Photo'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: ''
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

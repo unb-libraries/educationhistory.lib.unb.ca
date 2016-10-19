@@ -1,0 +1,27 @@
+uuid: d2a53776-8938-495a-bf96-a7bf79664470
+langcode: en
+status: false
+dependencies:
+  module:
+    - book
+    - system
+  theme:
+    - bartik
+id: educationhistory_lib_unb_ca_book_navigation
+theme: bartik
+region: '-1'
+weight: -6
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Navigate Text (drag this box)'
+  provider: book
+  label_display: visible
+  block_mode: 'book pages'
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /MacN1947
+    context_mapping: {  }

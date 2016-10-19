@@ -1,0 +1,26 @@
+uuid: c9d5b5f6-a19b-434e-a404-697780ab221d
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.thesis.body
+    - node.type.thesis
+  module:
+    - text
+    - user
+id: node.thesis.teaser
+targetEntityType: node
+bundle: thesis
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

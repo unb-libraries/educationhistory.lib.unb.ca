@@ -1,5 +1,5 @@
 uuid: 9cf24d43-e7bf-4cc9-b38b-642af16beb18
-langcode: en
+langcode: und
 status: true
 dependencies:
   module:
@@ -15,7 +15,7 @@ settings: {  }
 module: text
 locked: false
 cardinality: 1
-translatable: true
+translatable: false
 indexes: {  }
 persist_with_no_fields: true
 custom_storage: false

@@ -1,0 +1,95 @@
+uuid: 1306020b-6dc5-4b33-a09f-974ae37bd09e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.thesis.body
+    - field.field.node.thesis.comment_node_thesis
+    - field.field.node.thesis.field_author
+    - field.field.node.thesis.field_document_formats
+    - field.field.node.thesis.field_epub_for_e_readres_
+    - field.field.node.thesis.field_flipbook_preview
+    - field.field.node.thesis.field_pdf
+    - field.field.node.thesis.field_photo_author
+    - field.field.node.thesis.field_publication_information
+    - field.field.node.thesis.field_publisher
+    - node.type.thesis
+  module:
+    - file
+    - path
+    - text
+id: node.thesis.default
+targetEntityType: node
+bundle: thesis
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 31
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  comment:
+    type: comment_default
+    weight: 20
+    settings: {  }
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+  field_epub_for_e_readres_:
+    weight: 33
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  field_pdf:
+    weight: 32
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+  path:
+    type: path
+    weight: 30
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 15
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  comment_node_thesis: true
+  field_author: true
+  field_document_formats: true
+  field_flipbook_preview: true
+  field_photo_author: true
+  field_publication_information: true
+  field_publisher: true

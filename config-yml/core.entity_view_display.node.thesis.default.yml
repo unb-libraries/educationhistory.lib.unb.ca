@@ -1,0 +1,61 @@
+uuid: c43a61a0-a6c1-4e65-b630-bf9fc0a58d8b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.thesis.body
+    - field.field.node.thesis.comment_node_thesis
+    - field.field.node.thesis.field_author
+    - field.field.node.thesis.field_document_formats
+    - field.field.node.thesis.field_epub_for_e_readres_
+    - field.field.node.thesis.field_flipbook_preview
+    - field.field.node.thesis.field_pdf
+    - field.field.node.thesis.field_photo_author
+    - field.field.node.thesis.field_publication_information
+    - field.field.node.thesis.field_publisher
+    - node.type.thesis
+  module:
+    - comment
+    - file
+    - text
+    - user
+id: node.thesis.default
+targetEntityType: node
+bundle: thesis
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  comment_node_thesis:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+  field_epub_for_e_readres_:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_pdf:
+    weight: 102
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  links:
+    weight: 100
+hidden:
+  field_author: true
+  field_document_formats: true
+  field_flipbook_preview: true
+  field_photo_author: true
+  field_publication_information: true
+  field_publisher: true

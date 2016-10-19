@@ -1,0 +1,8 @@
+uuid: 44d7d134-d740-4051-a5e2-7a9c47afaf6b
+langcode: en
+status: true
+dependencies: {  }
+id: management
+label: Management
+description: 'The <em>Management</em> menu contains links for administrative tasks.'
+locked: false

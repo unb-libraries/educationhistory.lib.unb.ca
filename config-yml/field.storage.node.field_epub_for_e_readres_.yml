@@ -1,0 +1,23 @@
+uuid: 00b5343a-c795-45da-9929-d7175c675ebc
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_epub_for_e_readres_
+field_name: field_epub_for_e_readres_
+entity_type: node
+type: file
+settings:
+  display_field: true
+  display_default: true
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -24,10 +24,10 @@ content:
   timezone:
     weight: 6
   user_picture:
-    type: image_image
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    type: image_image
+    weight: 7
     third_party_settings: {  }
-    weight: -1
 hidden: {  }

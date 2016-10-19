@@ -1,0 +1,18 @@
+uuid: f05659b2-09d4-4e15-a72f-68203a46fa3e
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.thesis
+id: node.thesis.title
+field_name: title
+entity_type: node
+bundle: thesis
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

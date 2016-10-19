@@ -1,0 +1,23 @@
+uuid: 769bd437-5b63-4233-9398-522352c486ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_thesis
+    - field.field.comment.comment_node_thesis.comment_body
+  module:
+    - text
+id: comment.comment_node_thesis.default
+targetEntityType: comment
+bundle: comment_node_thesis
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

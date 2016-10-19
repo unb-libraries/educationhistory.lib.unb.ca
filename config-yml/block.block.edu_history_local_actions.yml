@@ -1,0 +1,20 @@
+uuid: ad1912cc-4289-45d0-9508-5e4bef5ed3fb
+langcode: en
+status: true
+dependencies:
+  theme:
+    - edu_history
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: edu_history_local_actions
+theme: edu_history
+region: content
+weight: -8
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

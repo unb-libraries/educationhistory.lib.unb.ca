@@ -1,0 +1,20 @@
+uuid: dfbfaa78-e3b1-497f-958e-dfc3007dd9aa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - edu_history
+_core:
+  default_config_hash: 7rR9chwXvdM2H8OYMAYx9Zj3GGlPMrZp_M3ZA4thYTk
+id: edu_history_page_title
+theme: edu_history
+region: content
+weight: -8
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

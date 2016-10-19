@@ -1,0 +1,22 @@
+uuid: 87b3de55-4f01-4e43-968d-0859e89756d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.thesis
+  module:
+    - text
+id: node.thesis.body
+field_name: body
+entity_type: node
+bundle: thesis
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

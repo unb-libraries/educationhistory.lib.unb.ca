@@ -1,0 +1,27 @@
+uuid: 34dbc7a7-8f7b-404a-817e-2091558572b8
+langcode: en
+status: false
+dependencies:
+  module:
+    - book
+    - system
+  theme:
+    - edu_history
+id: edu_history_educationhistory_lib_unb_ca_book_navigation
+theme: edu_history
+region: '-1'
+weight: -9
+provider: null
+plugin: book_navigation
+settings:
+  id: book_navigation
+  label: 'Navigate Text (drag this box)'
+  provider: book
+  label_display: visible
+  block_mode: 'book pages'
+visibility:
+  request_path:
+    id: request_path
+    negate: true
+    pages: /MacN1947
+    context_mapping: {  }

@@ -1,0 +1,19 @@
+uuid: bc7da0ea-a692-4143-a01f-b03c7d87a111
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_flipbook_preview
+field_name: field_flipbook_preview
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

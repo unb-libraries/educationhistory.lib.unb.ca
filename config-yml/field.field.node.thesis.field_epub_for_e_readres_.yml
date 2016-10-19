@@ -1,0 +1,27 @@
+uuid: 8d74d5a0-1f34-41e7-9c9d-c34fea8bcae1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_epub_for_e_readres_
+    - node.type.thesis
+  module:
+    - file
+id: node.thesis.field_epub_for_e_readres_
+field_name: field_epub_for_e_readres_
+entity_type: node
+bundle: thesis
+label: 'ePub (for e-readres)'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: epub
+  max_filesize: ''
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

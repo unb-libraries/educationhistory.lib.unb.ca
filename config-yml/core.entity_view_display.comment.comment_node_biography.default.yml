@@ -1,0 +1,23 @@
+uuid: bc09f2c3-cc19-47ee-a398-92d09f515502
+langcode: en
+status: true
+dependencies:
+  config:
+    - comment.type.comment_node_biography
+    - field.field.comment.comment_node_biography.comment_body
+  module:
+    - text
+id: comment.comment_node_biography.default
+targetEntityType: comment
+bundle: comment_node_biography
+mode: default
+content:
+  comment_body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: a72f45ff-ef72-44c0-a9e7-5a7cdee2d18b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_publisher
+    - node.type.thesis
+  module:
+    - text
+id: node.thesis.field_publisher
+field_name: field_publisher
+entity_type: node
+bundle: thesis
+label: Publisher
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

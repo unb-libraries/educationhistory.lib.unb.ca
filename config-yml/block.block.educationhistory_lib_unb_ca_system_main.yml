@@ -1,22 +1,22 @@
-uuid: c0b668a3-0a27-4903-8557-f926117b2c79
+uuid: 1923f58a-ca55-403a-a313-c249d9f2a8ef
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - seven
+    - bartik
 _core:
-  default_config_hash: YRY68JWkaUiGeZlWMv1nzeIgDm0ZZwXYgpqUpLFzwAY
-id: seven_content
-theme: seven
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: educationhistory_lib_unb_ca_system_main
+theme: bartik
 region: content
 weight: 0
 provider: null
 plugin: system_main_block
 settings:
   id: system_main_block
-  label: 'Main page content'
+  label: ''
   provider: system
   label_display: '0'
 visibility: {  }

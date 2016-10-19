@@ -4,8 +4,10 @@ status: true
 dependencies:
   config:
     - field.field.node.book.body
+    - field.field.node.book.comment_node_book
     - node.type.book
   module:
+    - comment
     - text
     - user
 _core:
@@ -20,6 +22,14 @@ content:
     type: text_default
     weight: 100
     settings: {  }
+    third_party_settings: {  }
+  comment_node_book:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      pager_id: 0
+      view_mode: default
     third_party_settings: {  }
   links:
     weight: 101

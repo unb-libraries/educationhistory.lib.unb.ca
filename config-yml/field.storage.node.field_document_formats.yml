@@ -1,0 +1,19 @@
+uuid: 803c3da4-915f-4263-818a-c6436cd25a89
+langcode: und
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_document_formats
+field_name: field_document_formats
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

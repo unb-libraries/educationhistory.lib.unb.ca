@@ -1,11 +1,11 @@
 uuid: f1de2d88-eedf-4115-af2b-d55cf0a30215
-name: Site-Install
+name: 'History of Education in New Brunswick'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /node/20
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en

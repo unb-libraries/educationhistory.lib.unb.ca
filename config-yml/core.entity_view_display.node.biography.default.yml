@@ -1,0 +1,36 @@
+uuid: 52c9ca72-df58-4bae-bc6b-eb8bdb1dc314
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.biography.body
+    - field.field.node.biography.comment_node_biography
+    - field.field.node.biography.field_author_photo
+    - node.type.biography
+  module:
+    - comment
+    - text
+    - user
+id: node.biography.default
+targetEntityType: node
+bundle: biography
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+  comment_node_biography:
+    label: hidden
+    type: comment_default
+    weight: 20
+    settings:
+      pager_id: 0
+      view_mode: default
+    third_party_settings: {  }
+  links:
+    weight: 100
+hidden:
+  field_author_photo: true
