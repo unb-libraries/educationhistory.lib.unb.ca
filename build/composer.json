@@ -13,7 +13,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "description": "Project definition for pmportal.org",
+    "description": "Project definition for educationhistory.lib.unb.ca",
     "extra": {
         "enable-patching": true,
         "installer-paths": {
@@ -39,7 +39,7 @@
     },
     "license": "MIT",
     "minimum-stability": "dev",
-    "name": "unblibraries/pmportal.org",
+    "name": "unblibraries/educationhistory.lib.unb.ca",
     "prefer-stable": true,
     "repositories": [
         {
