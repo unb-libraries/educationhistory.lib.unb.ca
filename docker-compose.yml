@@ -18,7 +18,7 @@ services:
     restart: always
     container_name: educationhistory.lib.unb.ca
     expose:
-     - "80"
+      - "80"
     ports:
       - "3084:80"
     env_file:
