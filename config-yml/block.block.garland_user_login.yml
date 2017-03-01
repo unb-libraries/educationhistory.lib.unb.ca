@@ -1,0 +1,20 @@
+uuid: 3111382c-9f38-4c07-a4de-e7f120ffc3e5
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - garland
+id: garland_user_login
+theme: garland
+region: sidebar_first
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: ''
+  provider: user
+  label_display: '0'
+visibility: {  }

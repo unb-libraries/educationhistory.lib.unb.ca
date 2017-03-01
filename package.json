@@ -2,7 +2,7 @@
   "name": "educationhistory.lib.unb.ca_local",
   "version": "1.0.0",
   "main": "Gruntfile.js",
-  "author": "libsystems@unb.ca",
+  "author": "libsupport@unb.ca",
   "private": true,
   "license": "MIT",
   "config": {

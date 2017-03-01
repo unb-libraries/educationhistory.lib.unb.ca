@@ -3,7 +3,8 @@ version: '2'
 services:
   mysql:
     image: mysql
-    command: mysqld --skip-name-resolve
+    restart: always
+    command: mysqld --skip-name-resolve --max_allowed_packet=64M
     env_file:
       - ./env/mysql.env
     expose:
@@ -14,6 +15,7 @@ services:
       context: .
       args:
         - COMPOSER_DEPLOY_DEV=dev
+    restart: always
     container_name: educationhistory.lib.unb.ca
     expose:
      - "80"
