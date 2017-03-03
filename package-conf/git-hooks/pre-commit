@@ -3,6 +3,8 @@
 # PHP CodeSniffer pre-commit hook for Git
 # See README.md for the Drupal-Code Sniffer configuration/setup instructions.
 #
+# Source: https://raw.githubusercontent.com/geraldvillorente/drupal-pre-commit/master/pre-commit
+#
 # Author: Gerald Z. Villorente
 # Co-author: Nikolaos Dimopoulos
 # Co-author: Engr. Ranel O. Padon
