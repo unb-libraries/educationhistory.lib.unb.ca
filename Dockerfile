@@ -31,6 +31,10 @@ COPY package-conf/php/app-php-fpm.conf /etc/php7/php-fpm.d/zz_app.conf
 
 # Scripts.
 COPY ./scripts/container /scripts
+RUN curl -OL http://github.com/unb-libraries/docker-drupal-scripts/archive/container.zip && \
+  unzip container.zip && \
+  mv docker-drupal-scripts-container/*.sh /scripts/ && \
+  rm -rf container.zip docker-drupal-scripts-container
 
 # Remove upstream build and replace it with ours.
 RUN /scripts/deleteUpstreamTree.sh

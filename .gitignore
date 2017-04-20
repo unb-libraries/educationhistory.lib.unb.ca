@@ -6,3 +6,4 @@ npm-debug.log
 tmp-db
 tmp-files
 tests/features/bootstrap
+scripts/local

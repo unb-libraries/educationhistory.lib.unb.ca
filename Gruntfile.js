@@ -4,6 +4,7 @@ module.exports = function (grunt) {
     clean: {
       composer: ['vendor', 'composer.lock'],
       githooks: ['.git/hooks/*.sample'],
+      local_scripts: ['scripts/local'],
       node: ['node_modules', 'npm-debug.log'],
       tmp_transfer: ['tmp-config', 'tmp-db', 'tmp-files']
     },
@@ -31,6 +32,9 @@ module.exports = function (grunt) {
       },
       instance_start: {
         command: './scripts/local/instance_start.sh ' + pkgJson.config.upstream_image
+      },
+      install_local_scripts: {
+        command: 'rm -rf scripts/local; cd scripts; curl -OL http://github.com/unb-libraries/docker-drupal-scripts/archive/local.zip; unzip local.zip; mv docker-drupal-scripts-local local; rm local.zip'
       },
       instance_stop: {
         command: './scripts/local/instance_stop.sh'
@@ -75,7 +79,8 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['clean']);
   grunt.registerTask('disable-dev-mode', ['shell:disable_dev_mode']);
   grunt.registerTask('enable-dev-mode', ['shell:enable_dev_mode']);
-  grunt.registerTask('clean:all', ['clean:composer', 'clean:githooks', 'clean:node', 'clean:tmp_transfer', 'shell:gitclean']);
+  grunt.registerTask('clean:all', ['clean:composer', 'clean:githooks', 'clean:node', 'clean:tmp_transfer', 'clean:local_scripts', 'shell:gitclean']);
+  grunt.registerTask('clean:all-no-gitclean', ['clean:composer', 'clean:githooks', 'clean:node', 'clean:tmp_transfer', 'clean:local_scripts']);
   grunt.registerTask('githooks', ['clean:githooks', 'shell:copygithooks']);
   grunt.registerTask('instance-destroy', ['shell:instance_destroy']);
   grunt.registerTask('instance-start-over', ['shell:instance_stop', 'shell:instance_destroy', 'shell:instance_start']);
@@ -83,7 +88,7 @@ module.exports = function (grunt) {
   grunt.registerTask('instance-stop', ['shell:instance_stop']);
   grunt.registerTask('remote-dev-sync', ['shell:remote_dev_sync']);
   grunt.registerTask('repo-start-over', ['shell:instance_stop', 'shell:instance_destroy', 'clean:all', 'shell:gitpullcurrent', 'shell:node_install', 'setup']);
-  grunt.registerTask('setup', ['validationsetup']);
+  grunt.registerTask('setup', ['validationsetup', 'shell:install_local_scripts']);
   grunt.registerTask('tail-logs', ['shell:tail_logs']);
   grunt.registerTask('write-config', ['shell:write_config']);
   grunt.registerTask('uli', ['shell:uli']);
