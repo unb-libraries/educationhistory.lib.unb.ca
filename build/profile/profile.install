@@ -13,8 +13,8 @@
  * @see system_install()
  */
 function eduhist_install() {
-  include_once DRUPAL_ROOT . '/core/profiles/minimal/minimal.install';
-  minimal_install();
+  include_once DRUPAL_ROOT . '/core/profiles/standard/standard.install';
+  standard_install();
 
   // Can add code in here to make nodes, terms, etc.
 }
