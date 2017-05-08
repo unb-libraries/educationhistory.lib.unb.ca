@@ -1,9 +1,21 @@
 {
   "license": "MIT",
   "minimum-stability": "dev",
-  "name": "Provision scaffolding for deploying instance. Unrelated to Drupal site.",
+  "name": "unblibraries/educationhistory.lib.unb.ca",
+  "description": "Provision/scaffolding for developing drupal instance.",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/unb-libraries/dockworker.git"
+    }
+  ],
   "require-dev": {
-    "squizlabs/php_codesniffer": "2.5.1",
-    "drupal/coder": "^8.2.7"
+    "unblibraries/dockworker": "master",
+    "twbs/bootstrap-sass": "^3.3.7"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "vendor/bin/dockworker git:setup-hooks"
+    ]
   }
 }
