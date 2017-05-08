@@ -9,7 +9,7 @@ dependencies:
     - edu_history
 id: edu_history_educationhistory_lib_unb_ca_book_navigation
 theme: edu_history
-region: '-1'
+region: header
 weight: -9
 provider: null
 plugin: book_navigation

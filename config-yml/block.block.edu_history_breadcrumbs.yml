@@ -10,7 +10,7 @@ _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
 id: edu_history_breadcrumbs
 theme: edu_history
-region: '-1'
+region: header
 weight: -10
 provider: null
 plugin: system_breadcrumb_block

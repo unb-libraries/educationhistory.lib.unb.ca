@@ -21,6 +21,11 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
+    region: content
   links:
     weight: 100
-hidden: {  }
+    region: content
+hidden:
+  comment_node_article: true
+  field_image: true
+  field_tags: true

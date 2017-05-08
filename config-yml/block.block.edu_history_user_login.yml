@@ -8,7 +8,7 @@ dependencies:
     - edu_history
 id: edu_history_user_login
 theme: edu_history
-region: '-1'
+region: header
 weight: -3
 provider: null
 plugin: user_login_block

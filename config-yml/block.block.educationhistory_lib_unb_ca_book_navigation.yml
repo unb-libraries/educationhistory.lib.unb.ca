@@ -9,7 +9,7 @@ dependencies:
     - bartik
 id: educationhistory_lib_unb_ca_book_navigation
 theme: bartik
-region: '-1'
+region: header
 weight: -6
 provider: null
 plugin: book_navigation

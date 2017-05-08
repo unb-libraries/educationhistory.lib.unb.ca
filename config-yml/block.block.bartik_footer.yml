@@ -12,7 +12,7 @@ _core:
   default_config_hash: kkISXE1LT2FJEoYnqCrCpeFB-2pmGmMxMklVk7rQcfg
 id: bartik_footer
 theme: bartik
-region: '-1'
+region: header
 weight: -7
 provider: null
 plugin: 'system_menu_block:footer'

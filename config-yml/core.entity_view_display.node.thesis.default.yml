@@ -30,6 +30,7 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+    region: content
   comment_node_thesis:
     label: hidden
     type: comment_default
@@ -38,20 +39,24 @@ content:
       pager_id: 0
       view_mode: default
     third_party_settings: {  }
+    region: content
   field_epub_for_e_readres_:
     weight: 103
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
   field_pdf:
     weight: 102
     label: above
     settings: {  }
     third_party_settings: {  }
     type: file_default
+    region: content
   links:
     weight: 100
+    region: content
 hidden:
   field_author: true
   field_document_formats: true

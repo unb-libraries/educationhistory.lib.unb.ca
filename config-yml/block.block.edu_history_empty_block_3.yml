@@ -2,15 +2,11 @@ uuid: cf428c17-3254-4eef-943a-3fea297200ee
 langcode: en
 status: false
 dependencies:
-  content:
-    - 'block_content:basic:92db1acd-c21f-4da9-bcd0-bdf9aca6e002'
-  module:
-    - block_content
   theme:
     - edu_history
 id: edu_history_empty_block_3
 theme: edu_history
-region: '-1'
+region: header
 weight: -4
 provider: null
 plugin: 'block_content:92db1acd-c21f-4da9-bcd0-bdf9aca6e002'

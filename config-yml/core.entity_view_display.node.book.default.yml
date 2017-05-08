@@ -23,6 +23,7 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
+    region: content
   comment_node_book:
     label: hidden
     type: comment_default
@@ -31,6 +32,8 @@ content:
       pager_id: 0
       view_mode: default
     third_party_settings: {  }
+    region: content
   links:
     weight: 101
+    region: content
 hidden: {  }
