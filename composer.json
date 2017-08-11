@@ -2,6 +2,11 @@
   "license": "MIT",
   "minimum-stability": "dev",
   "name": "unblibraries/educationhistory.lib.unb.ca",
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    }
+  },
   "description": "Provision/scaffolding for developing drupal instance.",
   "repositories": [
     {

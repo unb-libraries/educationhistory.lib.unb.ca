@@ -10,6 +10,11 @@
             "scripts/composer/ScriptHandler.php"
         ]
     },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        }
+    },
     "conflict": {
         "drupal/drupal": "*"
     },
