@@ -66,7 +66,7 @@
         "drupal/features": "3.0-beta8",
         "drupal/inline_entity_form": "1.0-alpha6",
         "drush/drush": "~8.1",
-        "webflo/drupal-finder": "^0.2.1",
+        "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
     },
     "require-dev": {
