@@ -19,6 +19,11 @@ ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
 ENV NEWRELIC_PHP_VERSION 7.2.0.191
 ENV NEWRELIC_PHP_ARCH musl
 
+# Add scripts, remove delete upstream drupal build.
+COPY ./scripts/container /scripts
+RUN /scripts/DeployUpstreamContainerScripts.sh && \
+  /scripts/deleteUpstreamTree.sh
+
 # Add Mail Sending, Rsyslogd
 RUN apk --update add postfix rsyslog  && \
   rm -f /var/cache/apk/* && \
@@ -34,16 +39,9 @@ RUN mv /package-conf/postfix/main.cf /etc/postfix/main.cf && \
   mv /package-conf/php/app-php-fpm.conf /etc/php7/php-fpm.d/zz_app.conf && \
   rm -rf /package-conf
 
-# Scripts.
-COPY ./scripts/container /scripts
-RUN /scripts/DeployUpstreamContainerScripts.sh
-
-# Remove upstream build and replace it with ours.
-RUN /scripts/deleteUpstreamTree.sh
+# Deploy the generalized profile and makefile into our specific one.
 COPY build/ ${TMP_DRUPAL_BUILD_DIR}
 ENV DRUPAL_BUILD_TMPROOT ${TMP_DRUPAL_BUILD_DIR}/webroot
-
-# Deploy the generalized profile and makefile into our specific one.
 RUN /scripts/deployGeneralizedProfile.sh && \
   # Build Drupal tree.
   /scripts/buildDrupalTree.sh ${COMPOSER_DEPLOY_DEV} && \
