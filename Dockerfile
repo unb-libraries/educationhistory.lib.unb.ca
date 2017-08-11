@@ -15,10 +15,6 @@ ENV DRUPAL_SITE_URI educationhistory.lib.unb.ca
 ENV DRUPAL_SITE_UUID f1de2d88-eedf-4115-af2b-d55cf0a30215
 ENV DRUPAL_CONFIGURATION_EXPORT_SKIP devel
 
-# Newrelic.
-ENV NEWRELIC_PHP_VERSION 7.2.0.191
-ENV NEWRELIC_PHP_ARCH musl
-
 # Add scripts, remove delete upstream drupal build.
 COPY ./scripts/container /scripts
 RUN /scripts/DeployUpstreamContainerScripts.sh && \
