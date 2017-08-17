@@ -62,7 +62,7 @@
         "drupal-composer/drupal-scaffold": "~2.2.0",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.3.6",
+        "drupal/core": "8.3.7",
         "drupal/features": "3.0-beta8",
         "drupal/inline_entity_form": "1.0-alpha6",
         "drush/drush": "~8.1",
