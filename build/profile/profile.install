@@ -17,7 +17,9 @@ function eduhist_install() {
   standard_install();
 
   // Remove shortcut set as per https://www.drupal.org/node/2583113
-  \Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();
+  if (!empty(\Drupal::entityManager()->getStorage("shortcut_set")->load("default"))) {
+    \Drupal::entityManager()->getStorage("shortcut_set")->load("default")->delete();
+  }
 
   // Can add code in here to make nodes, terms, etc.
 }
