@@ -1,0 +1,54 @@
+language: php
+sudo: required
+
+services:
+  - docker
+
+php:
+  - '7.1'
+
+cache:
+  directories:
+        - $HOME/.composer/cache
+
+git:
+  depth: 1
+
+env:
+  global:
+    - SERVICE_NAME=educationhistory.lib.unb.ca
+    - AMAZON_ECR_REGION=us-east-1
+    - DEPLOY_BRANCHES=dev,prod
+    - DEPLOYMENT_FINISHED_MARKER=99_report_as_complete
+    - DOCKER_UPSTREAM_IMAGE=unblibraries/drupal:alpine-nginx-php7-8.x-composer
+    - OLD_IMAGES_TO_KEEP=2
+    - SERVICE_DEPLOY_PORT=80
+    - SERVICE_TEST_UP_PATH=/user
+
+before_install:
+  - git clone git://github.com/unb-libraries/CargoDock.git CargoDock
+  - CargoDock/travis/installDockerCompose.sh
+  - CargoDock/aws/installAuthAws.sh
+  - cp docker-compose.yml.travis docker-compose.yml
+  - CargoDock/travis/setDockerComposeEnv.sh
+
+before_script:
+  - CargoDock/travis/buildInstanceTheme.sh
+  - CargoDock/travis/buildInstanceForTesting.sh
+  - CargoDock/travis/waitForDeploy.sh
+  - CargoDock/travis/checkStartupForErrors.sh
+
+script:
+  - CargoDock/travis/testInstance.sh
+
+after_success:
+  - CargoDock/travis/buildImagePushToRepo.sh
+  - CargoDock/travis/cleanupOldImages.sh
+  - CargoDock/travis/triggerKubeDeploy.sh
+
+notifications:
+  slack:
+    rooms:
+      secure: wDYbJ6Qbwp0AoA31P58UsexxMyDwXq+VfkYhWi7RNmvbe3BCSOVWVAtHasifqvndXAyGRhrOkkR7qXsy9eIthvq6IcDCy3LCAGrdRW6he4rXhHcs0BAK7bCSKY9JbLZhp4VCvha0C9jPX4BgzMl42l/H4wTQVzhR+UxU0QqsTd4pFfXQBfZmEMaTFd2TnmCJtZhnHwjXSwLz2y0VSZZthCBlbxN1bLnWiJgogCUh04jcHtOtKfdHVtTRKmu65TOy/Hb8pAWhalbc6HC4ucru85eK2gbhiQkFkLVg5enTZzfr9IiSw+HAhGZbjcamRjUU1OdXzs55xd583kf3oXGGsXF3NDarGKSlHEvEMDlqewSy/TNlrjrVOlY5RIiPyBpRNAnOvDCeZEAOoqjFPayrDRXrMkMBHA3pxIcuJ9uAZvuzqt7bnXWVO1X/haDw6wqWziRCKe9OgzHwxAKWLHn6L5rxdPXrJ77OlCAliixUXg8B+ei4kOeu+anxn8ONYLjN6RkI5Ue17TXgAeGCYsFu1xpGxxsIxRv4oy/fL5YUMaOUUFh+gIHuKy2QhwF2EPXXYYZWHGVrLIQdWD8titCOlovk7WdiAH4OOGJFO/Pqy7H/1Jt0SZutf5jVi4fzpQO+wiCZ8Vodnqi7ukMHabcVqJ3Wzi+dNjuuiazlv3qhNE0=
+    on_start: always
+    on_success: always
