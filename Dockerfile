@@ -5,8 +5,6 @@ LABEL name="educationhistory.lib.unb.ca"
 LABEL vcs-ref=""
 LABEL vcs-url="https://github.com/unb-libraries/educationhistory.lib.unb.ca"
 
-ARG COMPOSER_DEPLOY_DEV=no-dev
-
 # Universal environment variables.
 ENV DEPLOY_ENV prod
 ENV DRUPAL_DEPLOY_CONFIGURATION TRUE
@@ -39,12 +37,13 @@ RUN mv /package-conf/postfix/main.cf /etc/postfix/main.cf && \
 COPY build/ ${TMP_DRUPAL_BUILD_DIR}
 ENV DRUPAL_BUILD_TMPROOT ${TMP_DRUPAL_BUILD_DIR}/webroot
 RUN /scripts/deployGeneralizedProfile.sh && \
-  # Build Drupal tree.
-  /scripts/buildDrupalTree.sh ${COMPOSER_DEPLOY_DEV} && \
-  /scripts/installDevTools.sh ${COMPOSER_DEPLOY_DEV} && \
-  /scripts/clearComposerCache.sh && \
-  # Install NewRelic.
   /scripts/installNewRelic.sh
+
+# Build the drupal tree.
+ARG COMPOSER_DEPLOY_DEV=no-dev
+RUN /scripts/buildDrupalTree.sh ${COMPOSER_DEPLOY_DEV} && \
+  /scripts/installDevTools.sh ${COMPOSER_DEPLOY_DEV} && \
+  /scripts/clearComposerCache.sh
 
 # Copy configuration.
 COPY ./config-yml ${TMP_DRUPAL_BUILD_DIR}/config-yml
