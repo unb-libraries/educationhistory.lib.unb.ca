@@ -62,10 +62,11 @@
         "drupal-composer/drupal-scaffold": "~2.2.0",
         "drupal/config_update": "1.1",
         "drupal/console": "~1.0",
-        "drupal/core": "8.4.0",
+        "drupal/core": "8.4.2",
         "drupal/features": "3.0-beta8",
         "drupal/inline_entity_form": "1.0-alpha6",
         "drupal/redis": "1.0-rc2",
+        "drush/drush": "^8.1.15",
         "webflo/drupal-finder": "^0.3.0",
         "webmozart/path-util": "^2.3"
     },
