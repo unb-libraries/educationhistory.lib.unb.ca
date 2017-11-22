@@ -21,12 +21,9 @@ RUN /scripts/DeployUpstreamContainerScripts.sh && \
   /scripts/deleteUpstreamTree.sh
 
 # Add Mail Sending, Rsyslogd
-RUN apk --update add postfix rsyslog  && \
+RUN apk --update add postfix rsyslog php7-redis && \
   rm -f /var/cache/apk/* && \
   touch /var/log/nginx/access.log && touch /var/log/nginx/error.log
-
-# Tests.
-COPY ./tests ${DRUPAL_TESTING_ROOT}
 
 # Add package conf.
 COPY ./package-conf /package-conf
@@ -42,7 +39,9 @@ RUN mv /package-conf/postfix/main.cf /etc/postfix/main.cf && \
 COPY build/ ${TMP_DRUPAL_BUILD_DIR}
 ENV DRUPAL_BUILD_TMPROOT ${TMP_DRUPAL_BUILD_DIR}/webroot
 RUN /scripts/deployGeneralizedProfile.sh && \
+  # Build Drupal tree.
   /scripts/buildDrupalTree.sh ${COMPOSER_DEPLOY_DEV} && \
+  # Install NewRelic.
   /scripts/installNewRelic.sh
 
 # Copy configuration.
@@ -51,3 +50,7 @@ COPY ./config-yml ${TMP_DRUPAL_BUILD_DIR}/config-yml
 # Custom modules not tracked in github.
 COPY ./custom/modules ${TMP_DRUPAL_BUILD_DIR}/custom_modules
 COPY ./custom/themes ${TMP_DRUPAL_BUILD_DIR}/custom_themes
+
+# Tests
+COPY ./tests/behat.yml ${TMP_DRUPAL_BUILD_DIR}/behat.yml
+COPY ./tests/features ${TMP_DRUPAL_BUILD_DIR}/features
