@@ -41,6 +41,8 @@ ENV DRUPAL_BUILD_TMPROOT ${TMP_DRUPAL_BUILD_DIR}/webroot
 RUN /scripts/deployGeneralizedProfile.sh && \
   # Build Drupal tree.
   /scripts/buildDrupalTree.sh ${COMPOSER_DEPLOY_DEV} && \
+  /scripts/installDevTools.sh ${COMPOSER_DEPLOY_DEV} && \
+  /scripts/clearComposerCache.sh && \
   # Install NewRelic.
   /scripts/installNewRelic.sh
 
