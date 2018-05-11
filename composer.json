@@ -7,7 +7,7 @@
       "*": "dist"
     }
   },
-  "description": "Provision/scaffolding for developing drupal instance.",
+  "description": "Scaffold and provision local development for educationhistory.lib.unb.ca",
   "repositories": [
     {
       "type": "git",
