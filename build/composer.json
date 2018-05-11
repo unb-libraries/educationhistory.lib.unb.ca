@@ -18,7 +18,7 @@
     "conflict": {
         "drupal/drupal": "*"
     },
-    "description": "Project definition for educationhistory.lib.unb.ca",
+    "description": "Drupal 8 component of educationhistory.lib.unb.ca",
     "extra": {
         "enable-patching": true,
         "installer-paths": {
