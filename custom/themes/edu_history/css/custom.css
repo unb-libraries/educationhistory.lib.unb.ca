@@ -9,7 +9,7 @@ div.region.region-content {
 }
 
 ul.menu {
-  padding-bottom: 10px;
+  padding-bottom: 10px !important;
 }
 
 div.clearfix.text-formatted.field.field--name-body {
