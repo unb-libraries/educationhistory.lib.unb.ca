@@ -4,6 +4,17 @@ div.region.region-content {
   padding-right:  60px;
 }
 
+.node__links {
+    margin-bottom: 10px;
+}
+
+ul.menu {
+  padding-bottom: 10px;
+}
+
+div.clearfix.text-formatted.field.field--name-body {
+  padding-top: 10px;
+}
 
 #kath3 {
 	float: right;
