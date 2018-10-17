@@ -1,6 +1,6 @@
 uuid: 5a611f49-1fa9-4009-9978-91d30a9122fd
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.admin-login
