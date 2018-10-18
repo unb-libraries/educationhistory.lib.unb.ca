@@ -1,4 +1,8 @@
 /* content */
+#kath + p {
+  text-align: justify;
+}
+
 div.region.region-content {
   padding-left:   60px;
   padding-right:  60px;
@@ -59,6 +63,7 @@ footer.site-footer {
 
 #kath {
 	float: right;
+  margin: 20px;
 }
 
 #site-name {
