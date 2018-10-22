@@ -17,7 +17,7 @@ The following packages are required to be globally installed on your development
 
 ### 1. Initial Setup
 #### A. Configure Local Development
-In the ```env/drupal.env``` file, change the environment settings to match your local development environment.
+In the ```env/drupal.env``` file, change the env settings to match your local development environment.
 
 ```
 DOCKER_ENDPOINT_IP=localhost
