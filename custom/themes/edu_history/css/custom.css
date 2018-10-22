@@ -1,3 +1,16 @@
+/* Header */
+#block-edu-history-custom-title div.content div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-image: url('/images/zen_master_logo_0.png');
+  background-repeat: no-repeat;
+}
+
+#block-edu-history-custom-title div.content div h2 {
+  padding-left: 220px;
+  margin-top: 20px;
+}
+
 /* content */
 #kath + p {
   text-align: justify;
