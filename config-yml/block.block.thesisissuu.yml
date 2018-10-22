@@ -1,0 +1,31 @@
+uuid: 247d3cfe-401f-40c3-a0f4-b8d20429f611
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c46bf25e-cb4f-4aec-a2a2-40aeaea5db6d'
+  module:
+    - block_content
+    - system
+  theme:
+    - edu_history
+id: thesisissuu
+theme: edu_history
+region: content
+weight: -6
+provider: null
+plugin: 'block_content:c46bf25e-cb4f-4aec-a2a2-40aeaea5db6d'
+settings:
+  id: 'block_content:c46bf25e-cb4f-4aec-a2a2-40aeaea5db6d'
+  label: 'Thesis ISSUU'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
