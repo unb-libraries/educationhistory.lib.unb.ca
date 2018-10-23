@@ -1,14 +1,15 @@
 /* Header */
-#block-edu-history-custom-title div.content div {
-  margin-top: 20px;
-  margin-bottom: 20px;
+#block-ehtitle div.content {
+  margin-bottom: 40px;
+  min-height: 100px;
   background-image: url('/themes/custom/edu_history/images/zen_master_logo_0.png');
   background-repeat: no-repeat;
 }
 
-#block-edu-history-custom-title div.content div h2 {
-  margin-left: 220px;
-  margin-top: 10px;
+#block-ehtitle div.content h2 {
+  margin-left: 200px;
+  margin-block-start: unset;
+  padding-top: 20px;
 }
 
 /* Pager */
