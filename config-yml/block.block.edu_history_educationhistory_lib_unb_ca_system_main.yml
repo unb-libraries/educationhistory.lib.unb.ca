@@ -11,7 +11,7 @@ _core:
 id: edu_history_educationhistory_lib_unb_ca_system_main
 theme: edu_history
 region: content
-weight: 0
+weight: -1
 provider: null
 plugin: system_main_block
 settings:

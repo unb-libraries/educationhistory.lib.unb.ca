@@ -1,0 +1,31 @@
+uuid: b0f12bb1-2e5b-4558-96e0-e84b3abac107
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:39af6aba-ffb5-4328-9c08-86cea122c6e4'
+  module:
+    - block_content
+    - system
+  theme:
+    - edu_history
+id: educationhistoryissuu
+theme: edu_history
+region: content
+weight: -2
+provider: null
+plugin: 'block_content:39af6aba-ffb5-4328-9c08-86cea122c6e4'
+settings:
+  id: 'block_content:39af6aba-ffb5-4328-9c08-86cea122c6e4'
+  label: 'Education History ISSUU'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

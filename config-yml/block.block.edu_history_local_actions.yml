@@ -9,7 +9,7 @@ _core:
 id: edu_history_local_actions
 theme: edu_history
 region: content
-weight: -8
+weight: -4
 provider: null
 plugin: local_actions_block
 settings:
