@@ -13,6 +13,7 @@ module:
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
+  eh_core: 0
   field: 0
   field_ui: 0
   file: 0

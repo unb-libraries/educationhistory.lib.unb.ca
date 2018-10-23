@@ -1,0 +1,20 @@
+uuid: 016488c0-8d0c-4260-b7b7-7a6b170869a5
+langcode: en
+status: true
+dependencies:
+  module:
+    - eh_core
+  theme:
+    - edu_history
+id: ehtitle
+theme: edu_history
+region: primary_menu
+weight: -5
+provider: null
+plugin: eh_title
+settings:
+  id: eh_title
+  label: 'EH Title'
+  provider: eh_core
+  label_display: '0'
+visibility: {  }

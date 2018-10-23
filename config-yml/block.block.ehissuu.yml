@@ -1,0 +1,26 @@
+uuid: ca8a18d2-474d-45e4-9e27-e2ef529f6e8b
+langcode: en
+status: true
+dependencies:
+  module:
+    - eh_core
+    - system
+  theme:
+    - edu_history
+id: ehissuu
+theme: edu_history
+region: content
+weight: -2
+provider: null
+plugin: eh_issuu
+settings:
+  id: eh_issuu
+  label: 'EH ISSUU'
+  provider: eh_core
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
