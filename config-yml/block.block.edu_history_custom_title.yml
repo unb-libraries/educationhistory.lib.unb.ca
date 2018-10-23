@@ -2,10 +2,6 @@ uuid: 1c8dfea8-e352-47f7-bde7-ea2e117b16b8
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:basic:02aa9df4-8705-4192-a3a0-a082e176b653'
-  module:
-    - block_content
   theme:
     - edu_history
 id: edu_history_custom_title

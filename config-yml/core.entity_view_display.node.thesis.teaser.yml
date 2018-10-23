@@ -24,4 +24,14 @@ content:
     region: content
   links:
     weight: 100
-hidden: {  }
+    region: content
+hidden:
+  comment_node_thesis: true
+  field_author: true
+  field_document_formats: true
+  field_epub_for_e_readres_: true
+  field_flipbook_preview: true
+  field_pdf: true
+  field_photo_author: true
+  field_publication_information: true
+  field_publisher: true
