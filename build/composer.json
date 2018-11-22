@@ -44,7 +44,7 @@
     },
     "license": "MIT",
     "minimum-stability": "stable",
-    "name": "unb-libraries/educationhistory.lib.unb.ca-drupal8",
+    "name": "unb-libraries/educationhistory.lib.unb.ca",
     "repositories": [
         {
             "type": "composer",
