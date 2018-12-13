@@ -32,7 +32,7 @@ div.region.region-content {
 }
 
 ul.menu {
-  padding-bottom: 10px !important;
+  padding-bottom: 0 !important;
 }
 
 div.clearfix.text-formatted.field.field--name-body {
@@ -124,17 +124,14 @@ div#page div#header {
   background-color: #ffffff;
 }
 
-#page #main-wrapper {
-	background: #cddfe8;
-	background-color: #cddfe8;
-}
-
 #page {
 	background: #cddfe8;
 }
 
-#main-wrapper {
-	margin-top: -30px;
+#page #main-wrapper {
+  margin-top: 0 !important;
+	background: #fff;
+	background-color: #fff;
 }
 
 /* ****************************************************************************
