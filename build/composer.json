@@ -53,7 +53,7 @@
     ],
     "require": {
         "drupal/config_update": "1.5",
-        "drupal/core": "8.6.9",
+        "drupal/core": "8.6.10",
         "drupal/features": "3.0",
         "drupal/google_analytics": "2.4",
         "unb-libraries/drupal-builder": "^8.0.0"
