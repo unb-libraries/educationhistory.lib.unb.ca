@@ -43,7 +43,8 @@
         }
     },
     "license": "MIT",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "name": "unb-libraries/educationhistory.lib.unb.ca",
     "repositories": [
         {
