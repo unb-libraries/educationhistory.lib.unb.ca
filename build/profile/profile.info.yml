@@ -1,6 +1,6 @@
-name: educationhistory.lib.unb.ca Profile
+name: PROFILE_SLUG Profile
 type: profile
-description: 'Install educationhistory.lib.unb.ca.'
+description: 'Install PROFILE_SLUG.'
 version: 8.x-1.0
 core: 8.x
 
@@ -41,8 +41,10 @@ dependencies:
   - views
   - views_ui
 
+  # This instance
+
 themes:
   - seven
   - bartik
   - stark
-  
+  - edu_history

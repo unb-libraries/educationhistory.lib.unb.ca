@@ -57,6 +57,9 @@
         "drupal/core": "8.7.8",
         "drupal/features": "3.0",
         "drupal/google_analytics": "2.4",
+        "drupal/search_api": "1.14",
+        "drupal/search_api_autocomplete": "1.2",
+        "drupal/search_api_solr": "3.4",
         "unb-libraries/drupal-builder": "^8.0.0"
     },
     "require-dev": {

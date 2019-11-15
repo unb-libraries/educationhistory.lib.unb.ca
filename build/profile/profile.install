@@ -2,16 +2,15 @@
 
 /**
  * @file
- * Install, update and uninstall for the default docker installation profile.
+ * Install, update and uninstall for the PROFILE_SLUG installation profile.
  */
 
 /**
  * Implements hook_install().
  *
- * Perform actions to set up the site for this profile.
+ * Perform actions to set up the site for PROFILE_SLUG.
  *
  * @see system_install()
  */
-function eduhist_install() {
-  // Can add code in here to make nodes, terms, etc.
+function PROFILE_SLUG_install() {
 }
