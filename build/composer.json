@@ -57,6 +57,7 @@
         "drupal/core": "8.7.8",
         "drupal/features": "3.0",
         "drupal/google_analytics": "2.4",
+        "drupal/health_check": "1.1",
         "drupal/redis": "1.1",
         "drupal/search_api": "1.14",
         "drupal/search_api_autocomplete": "1.2",
