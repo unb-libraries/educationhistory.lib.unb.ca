@@ -41,7 +41,8 @@ dependencies:
   - views
   - views_ui
 
-  # This instance
+  # PROFILE_SLUG
+  - redis
 
 themes:
   - seven
