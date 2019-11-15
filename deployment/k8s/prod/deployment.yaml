@@ -35,6 +35,21 @@ spec:
     spec:
       containers:
         -
+          name: educationhistory-lib-unb-ca
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 65
+            timeoutSeconds: 3
+            periodSeconds: 15
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 130
+            timeoutSeconds: 3
+            periodSeconds: 15
           env:
             -
               name: DEPLOY_ENV
@@ -74,7 +89,6 @@ spec:
               value: "/var/log/nginx/error.log"
           image: "||DEPLOYMENTIMAGE||"
           imagePullPolicy: Always
-          name: educationhistory-lib-unb-ca
           ports:
             -
               containerPort: 80
