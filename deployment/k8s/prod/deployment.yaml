@@ -36,6 +36,8 @@ spec:
         vcsRepository: educationhistory.lib.unb.ca
         vcsRef: prod
     spec:
+      nodeSelector:
+        deployenv: prod
       containers:
         -
           name: educationhistory-lib-unb-ca
