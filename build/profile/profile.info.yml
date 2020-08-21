@@ -37,16 +37,13 @@ dependencies:
   - toolbar
   - field_ui
   - file
+  - redis
   - rdf
   - views
   - views_ui
 
-  # PROFILE_SLUG
-  - health_check
-  - redis
 
 themes:
   - seven
   - bartik
   - stark
-  - edu_history
