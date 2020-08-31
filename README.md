@@ -1,4 +1,4 @@
-![educationhistory.lib.unb.ca screenshot](https://github.com/unb-libraries/educationhistory.lib.unb.ca/raw/prod/screenshot.png "educationhistory.lib.unb.ca screenshot")
+![educationhistory.lib.unb.ca screenshot](https://github.com/unb-libraries/educationhistory.lib.unb.ca/raw/prod/.dockworker/screenshot.png "educationhistory.lib.unb.ca screenshot")
 # [educationhistory.lib.unb.ca](https://educationhistory.lib.unb.ca/) : Instance Repository
 [![Build Status](https://travis-ci.com/unb-libraries/educationhistory.lib.unb.ca.svg?branch=prod)](https://travis-ci.com/unb-libraries/educationhistory.lib.unb.ca) [![GitHub license](https://img.shields.io/github/license/unb-libraries/educationhistory.lib.unb.ca)](https://github.com/unb-libraries/educationhistory.lib.unb.ca/blob/dev/LICENSE) ![GitHub repo size](https://img.shields.io/github/repo-size/unb-libraries/educationhistory.lib.unb.ca)
 
