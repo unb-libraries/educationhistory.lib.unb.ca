@@ -8,7 +8,7 @@ ENV DRUPAL_SITE_URI educationhistory.lib.unb.ca
 ENV DRUPAL_SITE_UUID f1de2d88-eedf-4115-af2b-d55cf0a30215
 
 # Build application.
-COPY ./build /build
+COPY ./build/ /build/
 RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   /scripts/addOsPackages.sh && \
   /scripts/initOpenLdap.sh && \
