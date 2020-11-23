@@ -54,7 +54,7 @@
     ],
     "require": {
         "drupal/config_update": "1.5",
-        "drupal/core": "8.9.8",
+        "drupal/core": "8.9.9",
         "drupal/features": "3.0",
         "drupal/google_analytics": "2.5",
         "drupal/health_check": "1.2",
