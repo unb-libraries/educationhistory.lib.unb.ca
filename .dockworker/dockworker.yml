@@ -12,7 +12,7 @@ dockworker:
       - dev
       - prod
   drupal:
-    version: 9
+    major: 9
   github:
     repo: educationhistory.lib.unb.ca
     owner: unb-libraries
