@@ -6,6 +6,9 @@
   "config": {
     "preferred-install": {
       "*": "dist"
+    },
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "description": "Scaffold and provision local development for educationhistory.lib.unb.ca",
