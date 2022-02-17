@@ -1,17 +1,17 @@
 {
-  "license": "MIT",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "name": "unb-libraries/educationhistory.lib.unb.ca",
   "config": {
-    "preferred-install": {
-      "*": "dist"
-    },
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "preferred-install": {
+      "*": "dist"
     }
   },
   "description": "Scaffold and provision local development for educationhistory.lib.unb.ca",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "name": "unb-libraries/educationhistory.lib.unb.ca",
+  "prefer-stable": true,
   "require-dev": {
     "unb-libraries/dockworker-drupal": "^4"
   },
