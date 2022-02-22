@@ -4,3 +4,4 @@ composer.lock
 scripts/local
 tests/behat/features/bootstrap
 vendor
+config-yml/.htaccess
