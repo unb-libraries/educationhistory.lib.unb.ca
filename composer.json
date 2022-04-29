@@ -13,7 +13,7 @@
   "name": "unb-libraries/educationhistory.lib.unb.ca",
   "prefer-stable": true,
   "require-dev": {
-    "unb-libraries/dockworker-drupal": "^4"
+    "unb-libraries/dockworker-drupal": "^5"
   },
   "scripts": {
     "post-update-cmd": [
