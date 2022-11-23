@@ -17,8 +17,8 @@ plugin: 'block_content:92db1acd-c21f-4da9-bcd0-bdf9aca6e002'
 settings:
   id: 'block_content:92db1acd-c21f-4da9-bcd0-bdf9aca6e002'
   label: empty_block
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

@@ -18,20 +18,20 @@ bundle: book
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 100
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 100
     region: content
   comment_node_book:
-    label: hidden
     type: comment_default
-    weight: 20
+    label: hidden
     settings:
-      pager_id: 0
       view_mode: default
+      pager_id: 0
     third_party_settings: {  }
+    weight: 20
     region: content
   links:
     weight: 101

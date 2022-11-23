@@ -15,6 +15,6 @@ plugin: eh_title
 settings:
   id: eh_title
   label: 'EH Title'
-  provider: eh_core
   label_display: '0'
+  provider: eh_core
 visibility: {  }

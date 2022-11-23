@@ -17,8 +17,8 @@ plugin: 'block_content:02aa9df4-8705-4192-a3a0-a082e176b653'
 settings:
   id: 'block_content:02aa9df4-8705-4192-a3a0-a082e176b653'
   label: custom_title
-  provider: block_content
   label_display: '0'
+  provider: block_content
   status: true
   info: ''
   view_mode: full

@@ -16,12 +16,12 @@ plugin: book_navigation
 settings:
   id: book_navigation
   label: 'Navigate Text (drag this box)'
-  provider: book
   label_display: visible
+  provider: book
   block_mode: 'book pages'
 visibility:
   request_path:
     id: request_path
     negate: true
-    pages: /MacN1947
     context_mapping: {  }
+    pages: /MacN1947

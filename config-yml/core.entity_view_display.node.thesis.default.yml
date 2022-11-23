@@ -25,34 +25,34 @@ bundle: thesis
 mode: default
 content:
   body:
-    label: hidden
     type: text_default
-    weight: 101
+    label: hidden
     settings: {  }
     third_party_settings: {  }
+    weight: 101
     region: content
   comment_node_thesis:
-    label: hidden
     type: comment_default
-    weight: 20
+    label: hidden
     settings:
-      pager_id: 0
       view_mode: default
+      pager_id: 0
     third_party_settings: {  }
+    weight: 20
     region: content
   field_epub_for_e_readres_:
-    weight: 103
+    type: file_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: file_default
+    weight: 103
     region: content
   field_pdf:
-    weight: 102
+    type: file_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: file_default
+    weight: 102
     region: content
   links:
     weight: 100
