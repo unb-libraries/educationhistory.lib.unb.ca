@@ -1,8 +1,8 @@
-FROM ghcr.io/unb-libraries/drupal:9.x-2.x-unblib
+FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
 MAINTAINER UNB Libraries <libsupport@unb.ca>
 
 # Install additional OS packages.
-ENV ADDITIONAL_OS_PACKAGES postfix php7-ldap php7-redis
+ENV ADDITIONAL_OS_PACKAGES postfix php-ldap php-zip php81-pecl-redis
 ENV DRUPAL_SITE_ID eduhist
 ENV DRUPAL_SITE_URI educationhistory.lib.unb.ca
 ENV DRUPAL_SITE_UUID f1de2d88-eedf-4115-af2b-d55cf0a30215
@@ -16,7 +16,7 @@ RUN ${RSYNC_MOVE} /build/scripts/container/ /scripts/ && \
   /scripts/build.sh
 
 # Deploy configuration.
-COPY ./config-yml ${DRUPAL_CONFIGURATION_DIR}
+COPY ./configuration ${DRUPAL_CONFIGURATION_DIR}
 RUN /scripts/pre-init.d/72_secure_config_sync_dir.sh
 
 # Deploy custom modules, themes.

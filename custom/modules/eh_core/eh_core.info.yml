@@ -2,5 +2,5 @@ name: Education History Core
 type: module
 description: Core functionality extension for educationhistory.lib.unb.ca
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 package: EH Custom Modules

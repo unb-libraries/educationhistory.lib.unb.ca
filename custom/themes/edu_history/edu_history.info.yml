@@ -5,7 +5,7 @@ description: "For educationhistory.lib.unb.ca - Sub-themed from Bartik."
 package: Core
 version: VERSION
 core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9 || ^10
 
 libraries:
   - edu_history/global-styling

@@ -1,9 +1,9 @@
 services:
-  educationhistory.lib.unb.ca:
+  educationhistory-lib-unb-ca:
     build:
       context: .
     restart: unless-stopped
-    container_name: educationhistory.lib.unb.ca
+    container_name: educationhistory-lib-unb-ca
     expose:
       - "80"
     ports:
@@ -14,7 +14,7 @@ services:
       - educationhistory.lib.unb.ca
     volumes:
       - drupal-data:/app/html/sites/default
-      - ./config-yml:/app/configuration
+      - ./configuration:/app/configuration
       - ./custom/modules:/app/html/modules/custom
       - ./custom/themes:/app/html/themes/custom
       - ./tests:/app/tests
@@ -35,8 +35,9 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
   drupal-redis-lib-unb-ca:
-    image: redis:5-alpine
+    image: redis:7-alpine
     restart: unless-stopped
+    command: redis-server --maxmemory-policy allkeys-lru --maxmemory 128mb
     expose:
       - "6379"
     networks:

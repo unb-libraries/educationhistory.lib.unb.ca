@@ -49,9 +49,9 @@ module:
   views: 10
   minimal: 1000
 theme:
-  stable: 0
-  classy: 0
+  stable9: 0
+  olivero: 0
   bartik: 0
-  seven: 0
+  claro: 0
   edu_history: 0
 profile: minimal

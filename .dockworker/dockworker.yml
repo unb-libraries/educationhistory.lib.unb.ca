@@ -1,28 +1,80 @@
 dockworker:
-  version: '5'
+  version: '6'
   application:
-    name: educationhistory.lib.unb.ca
-    finish_marker: '99_zz_notify_user_URI'
-    project_prefix: EHIST
-    upstream_images:
-      - ghcr.io/unb-libraries/drupal:9.x-2.x-unblib
-    uuid: 3084
-  deployment:
-    environments:
+    name: History of Education in New Brunswick
+    uri: https://educationhistory.lib.unb.ca
+    description: >
+      Katherine MacNaughton’s Masters thesis, The Development of the Theory and Practice of 
+      Education in New Brunswick 1784–1900, was expanded into a published version, which was 
+      released in 1947 by the University of New Brunswick. The publication was the first and 
+      only completed in a projected series of three entitled “University of New Brunswick 
+      Historical Studies”, under the editorship and direction of Dr Alfred G. Bailey. An 
+      electronic version of the published text was undertaken by Allison Webster and Lisa 
+      Charlong at the Electronic Text Centre, University of New Brunswick Libraries, in 1998. 
+      By 2010 it was evident that this TEI/SGML version of the document was in need of a 
+      significant overhaul, and the website due for redesign. The current electronic version 
+      of the text has been issued as part of the University of New Brunswick’s 225th anniversary 
+      celebrations in 2010. The project is a result of a partnership between the university’s 
+      Archives & Special Collections department, and the Electronic Text Centre at UNB.
+    topics:
+      - education
+      - history
+      - research
+    identifiers:
+      id: educationhistory.lib.unb.ca
+      slug: educationhistory-lib-unb-ca
+      short_slug: educationhistory
+      uuid: 3084
+    framework:
+      name: Drupal
+      version: 10
+      startup_finished_marker: '99_startup_sequence_complete'
+      endpoint:
+        name: http
+        port: 80
+        readiness_timeout: 15
+    license:
+      license: MIT
+      holder: University of New Brunswick Libraries
+    shell:
+      path: /bin/sh
+  endpoints:
+    env:
       - dev
       - prod
-    workflow:
-      source: dockworker-drupal
-      type: deployment-workflow
-  drupal:
-    major: 9
-  github:
-    repo: educationhistory.lib.unb.ca
-    owner: unb-libraries
-  image:
-    push_branches:
-      - dev
-      - prod
-    name: ghcr.io/unb-libraries/educationhistory.lib.unb.ca
-    date_tag_image: true
-    repository: ghcr
+    deployments:
+      educationhistory-lib-unb-ca:
+        default: true
+        managed: true
+        name: educationhistory-lib-unb-ca
+      drupal-mysql-lib-unb-ca:
+        managed: false
+        name: mysql
+      drupal-redis-lib-unb-ca:
+        managed: false
+        name: redis
+      drupal-solr-lib-unb-ca:
+        managed: false
+        name: solr
+  workflows:
+    vcs:
+      type: github
+      owner: unb-libraries
+      name: educationhistory.lib.unb.ca
+    jira:
+      project_keys:
+        - EH
+    image:
+      name: ghcr.io/unb-libraries/educationhistory.lib.unb.ca
+      parent: ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+      repository: GitHub
+      push-branches:
+        - dev
+        - prod
+    e2e_tests:
+        - id: core
+          frequency: '*/5 * * * *'
+          source_files:
+            - .dockworker/tests/e2e/educationhistory.lib.unb.ca.yml
+          namespaces:
+            - prod

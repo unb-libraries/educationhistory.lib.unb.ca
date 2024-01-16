@@ -14,11 +14,11 @@
   "name": "unb-libraries/educationhistory.lib.unb.ca",
   "prefer-stable": true,
   "require-dev": {
-    "unb-libraries/dockworker-drupal": "^5"
+    "unb-libraries/dockworker-drupal": "^6"
   },
   "scripts": {
     "post-update-cmd": [
-      "vendor/bin/dockworker dockworker:git:setup-hooks"
+      "vendor/bin/dockworker git:setup-hooks"
     ]
   }
 }
