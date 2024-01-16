@@ -37,7 +37,7 @@ class EhIssuu extends BlockBase {
       Page Turner
       </a>
       <br>
-      <a href="/sites/default/files/2016-07/education_history.pdf">PDF</a><br />
+      <a href="/sites/default/files/images/MacN1947.pdf">PDF</a><br />
       <a href="/sites/default/files/2016-07/education_history.epub">ePub (for e-readers)</a>
       </p>
     ';
