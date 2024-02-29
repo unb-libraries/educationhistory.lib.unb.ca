@@ -9,7 +9,7 @@ describe('History of Education in New Brunswick', {baseUrl: host, groups: ['site
     })
 
     specify('Downloadable PDF/ePub documents, "Embeded Issuu" should be available', () => {
-      cy.get('.content a[href="/sites/default/files/2016-07/education_history.pdf"]')
+      cy.get('.content a[href="/sites/default/files/images/MacN1947.pdf"]')
         .should('be.visible')
       cy.get('.content a[href="/sites/default/files/2016-07/education_history.epub"]')
         .should('be.visible')
