@@ -71,10 +71,3 @@ dockworker:
       push-branches:
         - dev
         - prod
-    e2e_tests:
-        - id: core
-          frequency: '*/5 * * * *'
-          source_files:
-            - .dockworker/tests/e2e/educationhistory.lib.unb.ca.yml
-          namespaces:
-            - prod
