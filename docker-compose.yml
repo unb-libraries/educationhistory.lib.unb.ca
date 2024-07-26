@@ -68,6 +68,8 @@ services:
       - "4084:8025"
     networks:
       - educationhistory.lib.unb.ca
+    profiles:
+      - mailhog
 networks:
   educationhistory.lib.unb.ca:
     name: educationhistory.lib.unb.ca
