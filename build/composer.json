@@ -84,7 +84,6 @@
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^1",
     "drupal/quickedit": "^1",
-    "drupal/rdf": "^2",
     "drupal/redis": "^1",
     "drupal/simple_sitemap": "^4",
     "unb-libraries/composer-drupal-scaffold": "^10"
