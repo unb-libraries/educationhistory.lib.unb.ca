@@ -278,3 +278,10 @@ div#breadcrumb {
 div.region-content {
   margin : 20px;
 }
+
+/* PDF.js */
+.pdf-container {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 2px 2px 2px gray;
+}
