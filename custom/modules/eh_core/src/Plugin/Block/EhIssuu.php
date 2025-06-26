@@ -35,10 +35,6 @@ class EhIssuu extends BlockBase {
         <br>
         <a href="/MacNTit">HTML</a>
         <br>
-        <a href="https://issuu.com/unb-etc/docs/macnaughton?printButtonEnabled=false&amp;shareButtonEnabled=false&amp;searchButtonEnabled=false&amp;backgroundColor=">
-        Page Turner
-        </a>
-        <br>
         <a href="/sites/default/files/images/MacN1947.pdf">PDF</a><br />
         <a href="/sites/default/files/2016-07/education_history.epub">ePub (for e-readers)</a>
       </p>
