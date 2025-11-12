@@ -1,7 +1,7 @@
-FROM ghcr.io/unb-libraries/drupal:10.x-1.x-unblib
+FROM ghcr.io/unb-libraries/drupal:11.x-1.x-unblib
 
 # Install additional OS packages.
-ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php-xmlreader php-zip php81-pecl-redis"
+ENV ADDITIONAL_OS_PACKAGES="postfix php-ldap php-xmlreader php-zip php83-pecl-redis"
 ENV DRUPAL_SITE_ID="eduhist"
 ENV DRUPAL_SITE_URI="educationhistory.lib.unb.ca"
 ENV DRUPAL_SITE_UUID="f1de2d88-eedf-4115-af2b-d55cf0a30215"
@@ -23,7 +23,7 @@ COPY ./custom/themes ${DRUPAL_ROOT}/themes/custom
 COPY ./custom/modules ${DRUPAL_ROOT}/modules/custom
 
 # Container metadata.
-LABEL ca.unb.lib.generator="drupal9" \
+LABEL ca.unb.lib.generator="drupal11" \
   com.microscaling.docker.dockerfile="/Dockerfile" \
   com.microscaling.license="MIT" \
   org.label-schema.build-date=$BUILD_DATE \
