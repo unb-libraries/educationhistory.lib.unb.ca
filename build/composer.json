@@ -78,8 +78,9 @@
     }
   ],
   "require": {
-    "drupal/color": "^2",
     "drupal/bartik": "^1",
+    "drupal/book": "^2",
+    "drupal/color": "^2",
     "drupal/core-composer-scaffold": "^11",
     "drupal/core-recommended": "^11",
     "drupal/core": "^11",
