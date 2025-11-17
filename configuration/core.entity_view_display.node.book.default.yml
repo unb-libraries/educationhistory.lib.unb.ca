@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment_node_book.default
     - field.field.node.book.body
     - field.field.node.book.comment_node_book
     - node.type.book
@@ -22,7 +23,12 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
+    region: content
+  book_navigation:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
     region: content
   comment_node_book:
     type: comment_default
@@ -31,10 +37,11 @@ content:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 20
+    weight: 0
     region: content
   links:
-    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
     region: content
-hidden:
-  book_navigation: true
+hidden: {  }
