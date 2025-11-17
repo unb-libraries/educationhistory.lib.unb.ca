@@ -20,11 +20,4 @@ settings:
   block_mode: 'primary book page'
   show_top_item: false
   use_top_level_title: false
-visibility:
-  book:
-    id: book
-    books:
-      20: '20'
-    negate: 0
-    context_mapping:
-      node: '@node.node_route_context:node'
+
