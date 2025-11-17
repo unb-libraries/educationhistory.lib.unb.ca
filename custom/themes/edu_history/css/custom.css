@@ -12,6 +12,11 @@
   padding-top: 20px;
 }
 
+/* Links */
+a:hover, a:focus, .link:hover, .link:focus {
+  color: #219fe4 !important;
+}
+
 /* Pager */
 .book-pager {
   border-bottom: none !important;
@@ -28,7 +33,7 @@ div.region.region-content {
 }
 
 .node__links {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul.menu {
@@ -135,8 +140,22 @@ div#page div#header {
 }
 
 /* ****************************************************************************
- * Book navigation menu
+ * Book navigation
  * ************************************************************************* */
+
+.block-book-navigation, 
+.book-navigation,
+#block-edu-history-ehlinktotitlepage {
+  border-top: 1px solid #d6d6d6;
+}
+
+#block-edu-history-booknavigation .menu {
+  padding-left: 0;
+}
+
+.book-pager__item a {
+  float: right;
+}
 
 .book-navigation .menu {
   padding-left: 0px;

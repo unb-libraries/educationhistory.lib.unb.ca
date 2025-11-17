@@ -20,4 +20,4 @@ settings:
   block_mode: 'primary book page'
   show_top_item: false
   use_top_level_title: false
-
+visibility: {  }
