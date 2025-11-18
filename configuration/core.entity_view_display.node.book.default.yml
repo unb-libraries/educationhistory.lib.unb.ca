@@ -29,7 +29,7 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 3
-    region: content
+    region: hidden
   comment_node_book:
     type: comment_default
     label: hidden

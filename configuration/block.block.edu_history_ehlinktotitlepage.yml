@@ -1,0 +1,25 @@
+uuid: 837aa097-ebcb-4577-9cb6-a2053c1d8577
+langcode: en
+status: true
+dependencies:
+  module:
+    - eh_core
+    - system
+  theme:
+    - edu_history
+id: edu_history_ehlinktotitlepage
+theme: edu_history
+region: content
+weight: 0
+provider: null
+plugin: eh_link_title_page
+settings:
+  id: eh_link_title_page
+  label: 'EH Link to Title Page'
+  label_display: '0'
+  provider: eh_core
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -3,3 +3,4 @@ _core:
 allowed_types:
   - book
 child_type: book
+book_sort: weight
