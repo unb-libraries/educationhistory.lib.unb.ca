@@ -13,6 +13,9 @@
 }
 
 /* Links */
+a {
+  color: #3580a9;
+}
 a:hover, a:focus, .link:hover, .link:focus {
   color: #219fe4 !important;
 }
@@ -153,7 +156,15 @@ div#page div#header {
   padding-left: 0;
 }
 
-.book-pager__item a {
+.book-pager__item--previous a {
+  float: left;
+}
+
+.book-pager__item--center a {
+  text-align: center;
+}
+
+.book-pager__item--next a {
   float: right;
 }
 
