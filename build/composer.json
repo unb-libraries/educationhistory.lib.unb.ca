@@ -86,7 +86,6 @@
     "drupal/core": "^11",
     "drupal/google_analytics": "^4",
     "drupal/health_check": "^3",
-    "drupal/quickedit": "^1",
     "drupal/rdf": "^3",
     "drupal/redis": "^1",
     "drupal/simple_sitemap": "^4",
