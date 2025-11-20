@@ -10,6 +10,7 @@ services:
       - "3084:80"
     env_file:
       - ./env/drupal.env
+      - ./env/mysql.env
     networks:
       - educationhistory.lib.unb.ca
     volumes:
@@ -17,15 +18,17 @@ services:
       - ./configuration:/app/configuration
       - ./custom/modules:/app/html/modules/custom
       - ./custom/themes:/app/html/themes/custom
-      - ./tests:/app/tests
     depends_on:
       - drupal-mysql-lib-unb-ca
       - drupal-redis-lib-unb-ca
       - drupal-solr-lib-unb-ca
   drupal-mysql-lib-unb-ca:
-    image: mariadb:12.0
+    image: public.ecr.aws/docker/library/mariadb:12.0
     restart: unless-stopped
-    command: mariadbd --skip-name-resolve --max_allowed_packet=64M
+    command:
+      - mariadbd
+      - --skip-name-resolve
+      - --max_allowed_packet=64M
     env_file:
       - ./env/mysql.env
     expose:
@@ -35,9 +38,12 @@ services:
     volumes:
       - mysql-data:/var/lib/mysql
   drupal-redis-lib-unb-ca:
-    image: redis:8.2-alpine
+    image: public.ecr.aws/docker/library/redis:8.2-alpine
     restart: unless-stopped
-    command: redis-server --maxmemory-policy allkeys-lru --maxmemory 128mb
+    command:
+      - redis-server
+      - --maxmemory-policy allkeys-lru
+      - --maxmemory 128mb
     expose:
       - "6379"
     networks:
@@ -57,9 +63,9 @@ services:
       - /scripts/docker-entrypoint-multiple.sh
       - educationhistory.lib.unb.ca:/solr-conf
     volumes:
-      - solr-data:/opt/solr/server/solr/mycores
+      - solr-data:/var/solr/data
   mailhog:
-    image: mailhog/mailhog
+    image: public.ecr.aws/alekitto/mailhog:latest
     restart: unless-stopped
     expose:
       - "1025"
