@@ -13,7 +13,7 @@ use Drupal\Core\Block\BlockBase;
  *   category = @Translation("Misc"),
  * )
  */
-class EhTitlePage extends BlockBase {
+class EhLinkTitlePage extends BlockBase {
 
   /**
    * {@inheritdoc}
