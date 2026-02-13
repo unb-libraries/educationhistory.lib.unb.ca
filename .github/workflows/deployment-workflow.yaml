@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: unb-libraries/dockworker/.github/workflows/build-push-deploy-notify.yaml@6.x
+    uses: unb-libraries/dockworker/.github/workflows/build-push-deploy-notify.yaml@6.x-d11
     with:
       branch-env-map: '{"dev":"dev","prod":"prod"}'
       build-themes: true

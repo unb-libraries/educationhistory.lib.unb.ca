@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    uses: unb-libraries/dockworker/.github/workflows/update.yaml@6.x
+    uses: unb-libraries/dockworker/.github/workflows/update.yaml@6.x-d11
     with:
       add-paths: 'build/composer.*'
     secrets:
