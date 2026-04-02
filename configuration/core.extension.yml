@@ -12,12 +12,10 @@ module:
   contact: 0
   contextual: 0
   datetime: 0
-  dblog: 0
   dynamic_page_cache: 0
   editor: 0
   eh_core: 0
   field: 0
-  field_ui: 0
   file: 0
   filter: 0
   google_analytics: 0
@@ -43,7 +41,6 @@ module:
   toolbar: 0
   update: 0
   user: 0
-  views_ui: 0
   menu_link_content: 1
   views: 10
   minimal: 1000
