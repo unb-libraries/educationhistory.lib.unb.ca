@@ -55,7 +55,6 @@ permissions:
   - 'administer themes'
   - 'administer url aliases'
   - 'administer users'
-  - 'administer views'
   - 'bypass node access'
   - 'cancel account'
   - 'change own username'
