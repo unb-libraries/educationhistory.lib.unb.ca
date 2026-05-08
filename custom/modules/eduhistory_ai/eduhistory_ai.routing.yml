@@ -1,0 +1,15 @@
+eduhistory_ai.book_pages:
+  path: '/api/book-pages'
+  defaults:
+    _controller: '\Drupal\eduhistory_ai\Controller\BookPagesController::content'
+    _title: 'Education History Book Pages JSON'
+  requirements:
+    _permission: 'access content'
+
+eduhistory_ai.qa_form:
+  path: '/education-history-qa'
+  defaults:
+    _form: '\Drupal\eduhistory_ai\Form\EducationHistoryQaForm'
+    _title: 'Ask the Education History Book'
+  requirements:
+    _permission: 'access content'

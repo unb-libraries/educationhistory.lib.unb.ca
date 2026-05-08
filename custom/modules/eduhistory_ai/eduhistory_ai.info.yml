@@ -1,0 +1,8 @@
+name: Education History AI
+type: module
+description: 'Provides AI-powered question answering and JSON export for the education history book.'
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:text
