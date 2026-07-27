@@ -19,7 +19,5 @@ settings:
   label: custom_title
   label_display: '0'
   provider: block_content
-  status: true
-  info: ''
   view_mode: full
 visibility: {  }
