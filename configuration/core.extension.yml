@@ -46,7 +46,6 @@ module:
   minimal: 1000
 theme:
   stable9: 0
-  olivero: 0
   bartik: 0
   claro: 0
   edu_history: 0
