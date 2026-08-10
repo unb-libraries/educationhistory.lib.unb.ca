@@ -14,6 +14,7 @@ module:
   datetime: 0
   dynamic_page_cache: 0
   editor: 0
+  eduhistory_ai: 0
   eh_core: 0
   field: 0
   file: 0

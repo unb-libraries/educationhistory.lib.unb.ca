@@ -22,6 +22,80 @@ services:
       - drupal-mysql-lib-unb-ca
       - drupal-redis-lib-unb-ca
       - drupal-solr-lib-unb-ca
+  # The AI assistant's HTTP API. Drupal's question form POSTs to
+  # http://ai-api:8000/ask, so this service must be named "ai-api" for that
+  # hostname to resolve. Drupal does NOT depend on it: if this container is
+  # down the form shows an error and the rest of the site is unaffected.
+  ai-api:
+    build:
+      context: ./ai
+    restart: unless-stopped
+    env_file:
+      - ./env/ai.env
+    expose:
+      - "8000"
+    ports:
+      # Follows the existing host-port convention: 3084 Drupal, 4084 Mailpit.
+      - "5084:8000"
+    networks:
+      - educationhistory.lib.unb.ca
+    volumes:
+      # Bind-mount the source so edits apply without an image rebuild, the
+      # same way custom/modules is mounted for Drupal.
+      - ./ai/app:/app/app
+    # Override the image CMD to add --reload, which restarts uvicorn when a
+    # mounted file changes. Local development only.
+    command:
+      - uvicorn
+      - app.main:app
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8000"
+      - --reload
+    depends_on:
+      # The API creates the vector extension and tables on startup, so it
+      # needs a database that is actually accepting connections, not merely
+      # a container that has been started.
+      ai-postgres-lib-unb-ca:
+        condition: service_healthy
+      # Ollama now serves both halves of the pipeline: it embeds the text at
+      # index time and writes the answers at question time.
+      ai-ollama-lib-unb-ca:
+        condition: service_started
+  # Vector store for the indexed book text. Separate from Drupal's MariaDB
+  # because similarity search relies on pgvector, a PostgreSQL extension.
+  # This image ships that extension preinstalled; app/main.py still runs
+  # CREATE EXTENSION IF NOT EXISTS vector to enable it in the database.
+  ai-postgres-lib-unb-ca:
+    image: pgvector/pgvector:pg17
+    restart: unless-stopped
+    env_file:
+      - ./env/ai-postgres.env
+    expose:
+      - "5432"
+    networks:
+      - educationhistory.lib.unb.ca
+    volumes:
+      - ai-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U eduhist_ai -d eduhist_ai
+      interval: 5s
+      timeout: 5s
+      retries: 12
+  # Runs the local language model. Model weights are not baked into any
+  # image; they are pulled once into the volume below. See ai/README.md.
+  ai-ollama-lib-unb-ca:
+    image: ollama/ollama:0.32.6
+    restart: unless-stopped
+    expose:
+      - "11434"
+    networks:
+      - educationhistory.lib.unb.ca
+    volumes:
+      - ollama-data:/root/.ollama
   drupal-mysql-lib-unb-ca:
     image: ghcr.io/unb-libraries/mariadb:12.0
     restart: unless-stopped
@@ -80,6 +154,8 @@ networks:
   educationhistory.lib.unb.ca:
     name: educationhistory.lib.unb.ca
 volumes:
+  ai-postgres-data:
   drupal-data:
   mysql-data:
+  ollama-data:
   solr-data:

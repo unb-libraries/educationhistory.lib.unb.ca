@@ -50,10 +50,37 @@ class EducationHistoryQaForm extends FormBase {
     if (!empty($sources) && is_array($sources)) {
       $items = [];
 
+      // Several retrieved excerpts often come from the same printed page.
+      // Listing that page once keeps the citation list readable.
+      $seen = [];
+
       foreach ($sources as $source) {
-        $title = htmlspecialchars($source['title'] ?? 'Untitled');
-        $url = htmlspecialchars($source['url'] ?? '#');
-        $items[] = '<a href="' . $url . '">' . $title . '</a>';
+        $title = $source['title'] ?? 'Untitled';
+        $page = $source['printed_page'] ?? NULL;
+        $url = $source['url'] ?? '#';
+
+        $key = $url;
+        if (isset($seen[$key])) {
+          continue;
+        }
+        $seen[$key] = TRUE;
+
+        $label = $page
+          ? $this->t('@title, p. @page', ['@title' => $title, '@page' => $page])
+          : $title;
+
+        $links = [
+          '<a href="' . htmlspecialchars($url) . '">' . htmlspecialchars((string) $label) . '</a>',
+        ];
+
+        // The second link opens the scanned 1947 original at the same page,
+        // so a reader can check the passage against the printed book.
+        if (!empty($source['scan_url'])) {
+          $links[] = '<a href="' . htmlspecialchars($source['scan_url']) . '">'
+            . htmlspecialchars((string) $this->t('scan')) . '</a>';
+        }
+
+        $items[] = implode(' &middot; ', $links);
       }
 
       $form['sources'] = [

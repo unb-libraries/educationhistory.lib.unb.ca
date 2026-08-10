@@ -2,8 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# curl only, for poking at the service from inside the container while
+# debugging. No compiler is installed: every dependency below ships a prebuilt
+# wheel, so build-essential would add roughly 350MB and compile nothing.
 RUN apt-get update && apt-get install -y \
-    build-essential \
     curl \
     && rm -rf /var/lib/apt/lists/*
 

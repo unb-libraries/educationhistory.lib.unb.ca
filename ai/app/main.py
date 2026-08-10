@@ -9,10 +9,12 @@ from .db import SessionLocal, engine, Base
 # Import the SQLAlchemy model for stored text chunks.
 from .models import BookChunk
 
-# Import indexing helpers:
-# - build_chunks fetches and chunks Drupal content
-# - embed_texts creates embeddings for chunk text
-from .indexing import build_chunks, embed_texts
+# Import the helper that fetches and chunks Drupal content.
+from .indexing import build_chunks
+
+# Import the shared embedding helper. Indexing and retrieval both go through
+# this module so they cannot drift onto different models.
+from .embeddings import embed_texts
 
 # Import retrieval helper for semantic search.
 from .retrieval import search_chunks
@@ -74,10 +76,11 @@ def index_book(db: Session = Depends(get_db)):
     # Store each chunk and its embedding in the database.
     for chunk, embedding in zip(chunks, embeddings):
         record = BookChunk(
-            page_id=chunk["page_id"],
+            node_id=chunk["node_id"],
             title=chunk["title"],
             url=chunk["url"],
-            chapter=chunk["chapter"],
+            printed_page=chunk["printed_page"],
+            scan_url=chunk["scan_url"],
             chunk_index=chunk["chunk_index"],
             content=chunk["content"],
             embedding=embedding,
@@ -90,7 +93,10 @@ def index_book(db: Session = Depends(get_db)):
     # Return a summary.
     return {
         "message": "Education history indexing complete.",
-        "pages_indexed": len(set(chunk["page_id"] for chunk in chunks)),
+        "nodes_indexed": len(set(chunk["node_id"] for chunk in chunks)),
+        "printed_pages_indexed": len(
+            set(chunk["printed_page"] for chunk in chunks if chunk["printed_page"])
+        ),
         "chunks_indexed": len(chunks),
     }
 
@@ -103,14 +109,18 @@ def ask(request: QuestionRequest, db: Session = Depends(get_db)):
     # Ask the LLM to answer based on those chunks.
     answer = answer_question(request.question, chunks)
 
-    # Return the answer and its sources.
+    # Return the answer and its sources. Each source now names a single
+    # printed page of the 1947 edition and links to it two ways: into the web
+    # text at the right anchor, and into the scanned original.
     return {
         "question": request.question,
         "answer": answer,
         "sources": [
             {
                 "title": chunk["title"],
+                "printed_page": chunk["printed_page"],
                 "url": chunk["url"],
+                "scan_url": chunk["scan_url"],
                 "chunk_index": chunk["chunk_index"],
             }
             for chunk in chunks
