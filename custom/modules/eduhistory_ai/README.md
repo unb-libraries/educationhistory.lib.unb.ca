@@ -295,6 +295,28 @@ conversation history: each question is answered on its own, so follow-ups like
 
 ---
 
+## This module deploys. Its backend does not.
+
+The two halves of this feature travel by different routes, and the asymmetry is
+easy to miss.
+
+The image built by CI copies `./custom/modules` and `./configuration`, so **this
+module ships to any environment it is merged into**, and
+`configuration/core.extension.yml` enables it on arrival. The FastAPI service
+does not ship at all: it exists only in `docker-compose.yml`, which CI never
+reads, and the root `.dockerignore` keeps `ai/` out of the build context
+entirely.
+
+So on `dev` or `prod` the module would come up with nothing behind it —
+`/education-history-qa` publicly reachable and failing on every question,
+`/api/book-pages` publicly serving ~960KB of uncached JSON.
+
+**That is why this work stays on the `pilot` branch.** Before it ever reaches
+`dev`, either drop `eduhistory_ai: 0` from `core.extension.yml` so the code
+ships dormant and is enabled per environment with drush, or deploy the service
+properly first. The full list of what "properly" involves is in
+[`ai/README.md`](../../../ai/README.md#this-service-is-local-only-the-drupal-module-is-not).
+
 ## Rough edges
 
 Named so they read as known rather than overlooked:
