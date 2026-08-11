@@ -231,16 +231,55 @@ An answer of "I could not find that in the education history excerpts
 provided" is the retrieval half reporting that it found nothing useful — check
 the `sources` array in the response, not the prompt.
 
+## This service is local-only. The Drupal module is not.
+
+Worth stating plainly, because the two halves of this feature deploy by
+different mechanisms and only one of them reaches a server.
+
+**The AI service never leaves your machine.** CI builds a single image from the
+root `Dockerfile` and rolls out a single Kubernetes deployment:
+
+```yaml
+# .github/workflows/deployment-workflow.yaml
+image-name: 'ghcr.io/unb-libraries/educationhistory.lib.unb.ca'
+k8s-deployment-name: 'educationhistory-lib-unb-ca'
+```
+
+`docker-compose.yml` is never read by CI — it is local development tooling, and
+it is the only place `ai-api`, Postgres+pgvector and Ollama are defined. The
+root `.dockerignore` ignores everything but `Dockerfile`, `custom`, `build` and
+`configuration`, so `ai/` cannot even enter the build context. Nothing on the
+cluster would answer on `ai-api:8000`.
+
+**The Drupal module does deploy**, because the image copies `./custom/modules`
+and `./configuration`. So if `eduhistory_ai` is listed in
+`configuration/core.extension.yml` when a branch reaches `dev` or `prod`, the
+module is enabled on a server where its backend does not exist:
+
+- `/education-history-qa` becomes publicly reachable and fails on every
+  question.
+- `/api/book-pages` publicly serves ~960KB of uncached JSON per request.
+
+**This is why the work stays on the `pilot` branch.** `eduhistory_ai: 0` is
+present in `core.extension.yml` so local deploys enable the module
+automatically, which is exactly what makes merging to `dev` unsafe. Before any
+such merge, either remove that line so the code ships dormant and is enabled
+per environment with drush, or finish deploying the service properly.
+
+Doing that properly means: publishing `ai/` as its own image, adding
+deployments for it plus Postgres and Ollama, making the service URL in
+`EducationHistoryQaForm` configurable so the form can hide itself when unset,
+authenticating `/index`, and budgeting cluster memory for a model that
+`keep_alive` deliberately holds resident. `trusted_host_patterns` in
+`build/settings/settings.dev.inc` would also reject the container-name Host
+header the indexer relies on locally.
+
 ## Deliberately not done yet
 
 Named here so the gaps read as decisions rather than oversights:
 
-- **The service is local-only.** Nothing builds or deploys `ai/` in CI, and
-  `Dockerfile` does not include it. `/index` has no authentication, which is
-  tolerable on a private compose network and not beyond it. Publishing this
-  needs a real look at the endpoint's exposure first, plus
-  `trusted_host_patterns` in `build/settings/settings.dev.inc`, which would
-  reject the container-name Host header used above.
+- **`/index` has no authentication.** Tolerable on a private compose network,
+  not beyond it. See the deployment note above.
 - **No vector index.** `book_chunks` has no `ivfflat` or `hnsw` index, so every
   question scans every row. The measured corpus is ~1500 chunks and ~2MB of
   vectors, where a full scan takes well under a millisecond. An index would
