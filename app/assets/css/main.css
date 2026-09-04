@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-page: #cddfe8;
+  --color-content: #ffffff;
+  --color-header: #eaeff1;
+  --color-link: #3580a9;
+  --color-link-hover: #219fe4;
+  --font-header: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', Times, serif;
+  --font-body: Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@layer base {
+  a {
+    @apply text-link;
+  }
+
+  a:hover {
+    @apply text-link-hover;
+  }
+
+  h1 {
+    @apply text-3xl font-bold font-heading mb-4;
+  }
+
+  h2 {
+    @apply text-3xl font-bold font-heading mb-4;
+  }
+
+  embed {
+    @apply mb-4;
+  }
+
+  h3 {
+    @apply text-2xl font-bold font-heading mb-4;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  ul {
+    @apply list-disc pl-8 mb-4;
+  }
+
+  body {
+    @apply bg-page font-body;
+  }
+}
+
+@layer components {
+  .book-body {
+    @apply mb-4;
+  }
+
+  .book-page,
+  .title-page {
+    @apply font-heading mx-auto mb-4;
+    font-size: 1.3em;
+    max-width: 31.25em;
+  }
+
+  .title-page {
+    @apply border-double border-4 p-4;
+  }
+
+  .title-page__byline,
+  .title-page__author,
+  .title-page__edition,
+  .title-page__imprint,
+  .title-page__date {
+    @apply text-center my-4 mx-8;
+  }
+
+  .title-page__author,
+  .title-page__edition,
+  .title-page__imprint {
+    @apply uppercase;
+  }
+
+  .title-page__byline .title-page__name {
+    @apply font-bold;
+  }
+
+  .book-body h1,
+  .book-body h2 {
+    @apply text-center font-normal;
+  }
+
+  .book-body h1 {
+    @apply text-2xl;
+  }
+
+  .book-body h2 {
+    @apply text-xl;
+  }
+
+  .book-body ul {
+    @apply list-none pl-0 mb-4;
+  }
+
+  .bibliography-list li {
+    @apply my-4;
+  }
+
+  .book-body .page-number {
+    @apply block text-center border-t border-gray-700 pt-4 mt-4;
+  }
+
+  .book-pager {
+    @apply flex justify-between items-baseline gap-4 list-none pl-0 mb-4 border-t border-gray-300 pt-4;
+  }
+
+  .book-pager__item--next {
+    @apply text-right;
+  }
+}

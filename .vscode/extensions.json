@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "antfu.goto-alias",
+    "bradlc.vscode-tailwindcss",
+    "eamodio.gitlens",
+    "mikestead.dotenv",
+    "nuxtr.nuxtr-vscode",
+    "sdras.vue-vscode-snippets",
+    "wayou.vscode-todo-highlight",
+    "yoavbls.pretty-ts-errors"
+  ]
+}

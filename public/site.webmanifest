@@ -1,0 +1,16 @@
+{
+  "name": "History of Education in New Brunswick",
+  "short_name": "NB Education History",
+  "description": "The Development of the Theory and Practice of Education in New Brunswick, 1784-1900",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#900000",
+  "display": "standalone"
+}

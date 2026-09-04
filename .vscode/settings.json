@@ -1,0 +1,28 @@
+{
+  "diffEditor.renderSideBySide": false,
+  "editor.fontSize": 16,
+  "editor.tabSize": 2,
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "nuxtr.openItemsAfterCreation": true,
+  "tailwindCSS.classAttributes": ["class", "ui"],
+  "tailwindCSS.classFunctions": [
+    "defineAppConfig"
+  ],
+  "todohighlight.keywords": [
+    "TODO",
+    "FEAT",
+    "REFACTOR",
+    "FIX",
+    "TEST"
+  ],
+  "todohighlight.defaultStyle": {
+    "backgroundColor": "#3ac",
+    "color": "#fff"
+  }
+}

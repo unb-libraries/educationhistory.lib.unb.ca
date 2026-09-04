@@ -1,0 +1,39 @@
+{
+  "name": "educationhistory.lib.unb.ca",
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@11.10.0",
+  "scripts": {
+    "container:start": "docker compose up",
+    "build": "nuxt build",
+    "dev": "nuxt dev --public-url=http://${NUXT_SITE_URI:-localhost}:${NUXT_PORT:-3000}",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "lint:staged": "eslint $(find $(git diff --diff-filter=d --name-only --cached | xargs) -type f -name \"*.ts\") --no-error-on-unmatched-pattern --fix",
+    "lint:inspect": "eslint-config-inspector",
+    "prepare": "node .husky/install.mjs",
+    "postinstall": "node scripts/postinstall.mjs"
+  },
+  "dependencies": {
+    "@nuxt/content": "^3.15.2",
+    "nuxt": "^4.5.2",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^8.3.0",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@commitlint/types": "^20.5.0",
+    "@eslint/config-inspector": "^2.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^25.9.5",
+    "changelogen": "^0.6.2",
+    "eslint": "^10.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3"
+  }
+}

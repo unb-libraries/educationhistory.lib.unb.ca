@@ -1,0 +1,14 @@
+# shellEmulator and trustPolicy are required by @antfu/eslint-config's
+# pnpm/yaml-enforce-settings rule; trustPolicyIgnoreAfter keeps no-downgrade
+# from blocking long-published transitive deps (e.g. semver@6.3.1 via Babel).
+shellEmulator: true
+
+trustPolicy: no-downgrade
+trustPolicyIgnoreAfter: 129600 # 90 days, in minutes
+
+allowBuilds:
+  # Pulled in as an optional peer of db0 (@nuxt/content's database layer), but
+  # unused: nuxt.config.ts selects the native node:sqlite connector instead.
+  # Denied rather than approved so no C++ toolchain is needed to build the image.
+  better-sqlite3: false
+  esbuild: true
