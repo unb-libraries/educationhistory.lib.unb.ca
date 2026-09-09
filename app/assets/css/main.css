@@ -33,7 +33,7 @@
   }
 
   h3 {
-    @apply text-2xl font-bold font-heading mb-4;
+    @apply text-lg font-bold font-heading mb-4;
   }
 
   p {
@@ -50,6 +50,16 @@
 }
 
 @layer components {
+  .download-list {
+    @apply flex flex-wrap list-none pl-0 mb-4;
+  }
+
+  .download-list li:not(:last-child)::after {
+    @apply text-gray-500;
+    content: "|";
+    margin: 0 0.5em;
+  }
+
   .book-body {
     @apply mb-4;
   }
