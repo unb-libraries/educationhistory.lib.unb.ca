@@ -6,6 +6,10 @@ const {
   NUXT_PORT,
 } = env
 
+// GA4 property the Drupal site already reported to, kept so history isn't split by the
+// platform switch. See README.md's "Analytics" section for the migration record.
+const GA_MEASUREMENT_ID = 'G-DV1EVLKR95'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -44,6 +48,16 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#900000' },
         { rel: 'manifest', href: '/site.webmanifest' },
+      ],
+      // Prerendered into every page's head; no runtime server to inject it.
+      script: [
+        { src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`, async: true },
+        {
+          innerHTML: 'window.dataLayer=window.dataLayer||[];'
+            + 'function gtag(){dataLayer.push(arguments)}'
+            + 'gtag("js",new Date());'
+            + `gtag("config","${GA_MEASUREMENT_ID}",{allow_ad_personalization_signals:false});`,
+        },
       ],
     },
   },

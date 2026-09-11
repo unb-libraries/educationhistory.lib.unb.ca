@@ -27,6 +27,7 @@ There is no test setup configured in this repo. The Husky hooks are **not instal
 - **Layout**: `app/layouts/default.vue` is the single shell — header/logo, nav, `<slot />`. The only component is `app/components/BookPager.vue` (previous/next/up).
 - **Styling**: Tailwind CSS v4 via the `@tailwindcss/vite` plugin (no `tailwind.config.js` — v4 uses CSS-based config). Theme tokens (colors, fonts) are defined in `app/assets/css/main.css` under `@theme` and consumed as Tailwind utility classes (e.g. `bg-page`, `text-link`, `font-heading`). Global element styling (headings, links, lists) also lives in that file rather than in component-level classes.
 - **Static assets**: source documents (`MacN1947.pdf`, `education_history.epub`) and images live in `public/` and are referenced by absolute path (e.g. `/files/MacN1947.pdf`).
+- **Analytics**: stock GA4 gtag snippet inlined in `app.head.script` in `nuxt.config.ts` (property `G-DV1EVLKR95`, carried over from Drupal). See README's Analytics section.
 
 ## Local development
 

@@ -109,6 +109,16 @@ asserts every page was prerendered.
 Because the site is generated statically, any change to pages or content requires a
 rebuild — there is no server-side rendering at runtime.
 
+## Analytics
+
+Reports to Google Analytics 4 property `G-DV1EVLKR95` — the same property the Drupal site
+used, so the platform switch doesn't split the history. It's the stock gtag snippet inlined
+in `app.head.script` in `nuxt.config.ts` (constant `GA_MEASUREMENT_ID`), no module, env var,
+or runtime config. See `womenactivists.lib.unb.ca`'s README for the full migration write-up
+and caveats (in-site nav relies on a GA4 enhanced-measurement setting, dev shares the prod
+property, `page_location` is no longer overridden, `mailto` clicks aren't tracked) — they
+apply here too, since it's the same Drupal `google_analytics` module config carried over.
+
 ## Entry points
 
 - `/` — home page: embedded PDF, download links, and the table of contents.
