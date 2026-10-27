@@ -1,0 +1,12 @@
+name: Update educationhistory.lib.unb.ca
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 5 * * 1,4'
+
+jobs:
+  update:
+    uses: unb-libraries/dockworker/.github/workflows/update-nuxt.yaml@6.x
+    secrets:
+      PAT_TOKEN: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}
