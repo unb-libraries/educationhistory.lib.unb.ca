@@ -7,6 +7,6 @@ on:
 
 jobs:
   update:
-    uses: unb-libraries/dockworker/.github/workflows/update-nuxt.yaml@6.x
+    uses: unb-libraries/github-workflows/.github/workflows/update-nuxt.yaml@1.x
     secrets:
       PAT_TOKEN: ${{ secrets.UNBLIBBOT_PAT_TOKEN }}
