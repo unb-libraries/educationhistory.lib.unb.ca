@@ -60,6 +60,9 @@ ARG VERSION
 # Into $APP_WEBROOT, not over it: the base image ships .well-known/ there.
 COPY --from=build /nuxt/.output/public/ ${APP_WEBROOT}/
 
+# Legacy URL redirects, served by nginx since the cluster's Gateway runs no ingress snippets.
+COPY nginx/legacy-redirects.conf ${NGINX_CONFD_DIR}/server/
+
 LABEL ca.unb.lib.generator="nuxt-ssg" \
   org.opencontainers.image.title="educationhistory.lib.unb.ca" \
   org.opencontainers.image.description="The Development of the Theory and Practice of Education in New Brunswick 1784-1900." \
