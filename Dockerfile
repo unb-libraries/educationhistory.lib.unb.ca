@@ -51,7 +51,7 @@ RUN pnpm run generate && \
 
 
 # Deployment image
-FROM ghcr.io/unb-libraries/nuxt-ssg:3.23.x
+FROM ghcr.io/unb-libraries/nuxt-ssg:3.24.x
 
 ARG BUILD_DATE
 ARG VCS_REF
