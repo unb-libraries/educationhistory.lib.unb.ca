@@ -3,6 +3,7 @@ name: Deploy educationhistory.lib.unb.ca
 on:
   pull_request:
   push:
+    branches: [dev, prod]
   workflow_dispatch:
 
 concurrency:
