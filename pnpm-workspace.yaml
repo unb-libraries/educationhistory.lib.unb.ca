@@ -12,3 +12,9 @@ allowBuilds:
   # Denied rather than approved so no C++ toolchain is needed to build the image.
   better-sqlite3: false
   esbuild: true
+
+overrides:
+  # Patched majors for advisories whose parent packages still declare the
+  # vulnerable range. Delete an entry once `pnpm audit` passes without it.
+  '@nuxt/content>zod': ^4.6.6
+  readdir-glob>minimatch: ^11.0.1
