@@ -6,7 +6,9 @@ const isHome = computed(() => route.path === '/')
 <template>
   <div class="min-h-screen bg-page">
     <NuxtRouteAnnouncer />
-    <div class="mx-auto max-w-5xl">
+    <!-- Same 1400px column as the other Nuxt sites. The thesis keeps its own
+         reading measure via `.book-page` in main.css. -->
+    <div class="mx-auto max-w-[1400px]">
       <div class="bg-header">
         <header class="px-6 pt-[98px] pb-8 mb-10 min-h-[174px] flex items-start bg-[url('/images/zen_master_logo_0.png')] bg-no-repeat [background-position:left_4rem]">
           <h1 v-if="isHome" class="text-3xl font-normal font-header mb-0 ml-[200px]">
